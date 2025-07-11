@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="RevitAPI">
+        <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="RevitAPIUI">
+        <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Core\Application\Features\" />
+      <Folder Include="Core\Application\Interfaces\" />
+      <Folder Include="Core\Application\Services\" />
+      <Folder Include="Core\Domain\Entities\" />
+      <Folder Include="Core\Domain\Enums\" />
+      <Folder Include="Core\Domain\ValueObjects\" />
+      <Folder Include="Infrastructure\RevitAPI\" />
+      <Folder Include="Presentation\Helpers\" />
+      <Folder Include="Tests\" />   
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <!-- Display build configuration in console -->
+        <Exec Command="echo Configuration: $(Configuration)"/>
+
+        <!-- Check if ClashOpenings directory exists, if not, create it -->
+        <Exec Command="if not exist &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\&quot; mkdir &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\&quot;"/>
+
+        <!-- Copy target file to ClashOpenings directory -->
+        <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\&quot;"/>
+
+        <!-- Copy *.addin files from Presentation/Resources/Manifest to Addins directory -->
+        <Exec Command="copy /Y &quot;$(ProjectDir)Presentation\Resources\Manifest\*.addin&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\&quot;"/>
+
+        <!-- Display warning if no .addin file was found in Manifest folder -->
+        <Exec Command="if not exist &quot;$(ProjectDir)Presentation\Resources\Manifest\*.addin&quot; echo WARNING: No .addin file found in project"/>
+
+        <!-- Check if Icons folder exists and contains files before creating target directory and copying -->
+        <Exec Command="if exist &quot;$(ProjectDir)Presentation\Resources\Icons\*.*&quot; (
+        if not exist &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot; mkdir &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
+        xcopy /Y /E /I &quot;$(ProjectDir)Presentation\Resources\Icons&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
+    ) else (
+        echo WARNING: Icons folder does not exist or is empty in project
+    )"/>
+
+        <!-- Pause to help visualize the result -->
+        <Exec Command="pause"/>
+    </Target>
+
+</Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>  
+  <AddIn Type="Application">
+    <Name>ClashOpenings</Name>
+    <Assembly>ClashOpenings\ClashOpenings.dll</Assembly>
+    <AddInId>38FB90DE-C4BF-43F6-B8B7-BE2E68329BE6</AddInId>
+    <FullClassName>ClashOpenings.Presentation.RevitSetup.App</FullClassName>
+    <VendorId>Ascent Tech Solutions</VendorId>
+    <VendorDescription>Pabllo Dantas, https://www.linkedin.com/in/pabllodantas/</VendorDescription>
+  </AddIn>
+</RevitAddIns>
