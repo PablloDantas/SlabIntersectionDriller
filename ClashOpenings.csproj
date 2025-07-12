@@ -19,13 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Core\Application\Features\" />
-      <Folder Include="Core\Application\Interfaces\" />
-      <Folder Include="Core\Application\Services\" />
-      <Folder Include="Core\Domain\Entities\" />
       <Folder Include="Core\Domain\Enums\" />
-      <Folder Include="Core\Domain\ValueObjects\" />
-      <Folder Include="Infrastructure\RevitAPI\" />
       <Folder Include="Presentation\Helpers\" />
       <Folder Include="Tests\" />   
     </ItemGroup>
