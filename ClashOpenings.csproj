@@ -30,6 +30,10 @@
       <Folder Include="Tests\" />   
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="obj\global.json" />
+    </ItemGroup>
+
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <!-- Display build configuration in console -->
         <Exec Command="echo Configuration: $(Configuration)"/>
