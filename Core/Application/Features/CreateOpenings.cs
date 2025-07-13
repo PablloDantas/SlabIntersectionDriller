@@ -2,5 +2,5 @@
 
 public class CreateOpenings
 {
-    
+    // Instanciar as furações nos modelos
 }

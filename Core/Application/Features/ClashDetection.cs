@@ -2,5 +2,5 @@
 
 public class ClashDetection
 {
-    
+    // Realizar o processo de clash detection
 }

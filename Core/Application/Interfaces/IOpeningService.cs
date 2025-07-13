@@ -1,6 +1,6 @@
 ﻿namespace ClashOpenings.Core.Application.Interfaces;
 
-public interface IOpeningService
+public interface IOpeningService<T>
 {
-    
+    public T CreateOpening();
 }

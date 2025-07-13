@@ -8,24 +8,24 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="RevitAPI">
-        <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="RevitAPIUI">
-        <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
+        <Reference Include="RevitAPI">
+            <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="RevitAPIUI">
+            <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Core\Domain\Enums\" />
-      <Folder Include="Presentation\Helpers\" />
-      <Folder Include="Tests\" />   
+        <Folder Include="Core\Application\Services\"/>
+        <Folder Include="Presentation\Helpers\"/>
+        <Folder Include="Tests\"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="obj\global.json" />
+        <None Include="obj\global.json"/>
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">

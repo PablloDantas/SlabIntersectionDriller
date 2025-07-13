@@ -1,6 +1,5 @@
 ﻿namespace ClashOpenings.Core.Application.Interfaces;
 
-public class IIntersectionService
+public interface IIntersectionService
 {
-    
 }

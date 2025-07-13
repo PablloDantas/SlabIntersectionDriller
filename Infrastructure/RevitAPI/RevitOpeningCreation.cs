@@ -1,6 +1,12 @@
-﻿namespace ClashOpenings.Infrastructure.RevitAPI;
+﻿using Autodesk.Revit.DB;
+using ClashOpenings.Core.Application.Interfaces;
 
-public class RevitOpeningCreation
+namespace ClashOpenings.Infrastructure.RevitAPI;
+
+public class RevitOpeningCreation : IOpeningService<FamilyInstance>
 {
-    
+    public FamilyInstance CreateOpening()
+    {
+        throw new NotImplementedException();
+    }
 }
