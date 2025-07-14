@@ -1,309 +1,142 @@
-using System.IO;
-using System.Text;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using ClashOpenings.Infrastructure.RevitAPI;
-using Microsoft.Win32;
-using InvalidOperationException = Autodesk.Revit.Exceptions.InvalidOperationException;
 
 namespace ClashOpenings.Presentation.Commands;
 
-[Transaction(TransactionMode.Manual)]
+[Transaction(TransactionMode.ReadOnly)]
 public class SlabsOpeningsCommand : IExternalCommand
 {
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
         var uiDoc = commandData.Application.ActiveUIDocument;
         var doc = uiDoc.Document;
+        var activeView = doc.ActiveView;
 
-        var repo = new RevitRepository(doc);
-        var pipes = repo.GetByCategory(BuiltInCategory.OST_PipeCurves).ToList();
-        var floors = repo.GetByCategory(BuiltInCategory.OST_Floors).ToList();
-
-        var floorClashesMap = new Dictionary<ElementId, List<ElementId>>();
-
-        foreach (var floor in floors)
+        // 1. Recupera todas as instâncias de link
+        var linkInstances = new FilteredElementCollector(doc)
+            .OfClass(typeof(RevitLinkInstance))
+            .Cast<RevitLinkInstance>()
+            .ToList();
+        if (!linkInstances.Any())
         {
-            var floorId = floor.Id;
-            var clashResults = new List<ElementId>();
+            TaskDialog.Show("Erro", "Nenhuma instância de link encontrada.");
+            return Result.Failed;
+        }
 
-            var floorBbox = floor.get_BoundingBox(null);
-            var floorOutline = new Outline(floorBbox.Min, floorBbox.Max);
-            var bboxFilter = new BoundingBoxIntersectsFilter(floorOutline);
-
-            var candidateElements = new FilteredElementCollector(doc).WherePasses(bboxFilter).ToElements();
-
-            if (candidateElements.Count == 0) continue;
-
-            var floorSolid = GetSolidFromElement(floor);
-            if (floorSolid == null) continue;
-
-            foreach (var candidate in candidateElements)
+        // 2. Obter elevação do Project Base Point
+        var basePoints = new FilteredElementCollector(doc)
+            .OfCategory(BuiltInCategory.OST_ProjectBasePoint)
+            .WhereElementIsNotElementType()
+            .ToElements();
+        double bpElevation = 0;
+        foreach (var bp in basePoints)
+        {
+            var param = bp.get_Parameter(BuiltInParameter.BASEPOINT_ELEVATION_PARAM);
+            if (param != null && param.HasValue)
             {
-                if (candidate.Id.Equals(floorId) || candidate is not (MEPCurve or FamilyInstance)) continue;
-
-                var candidateSolid = GetSolidFromElement(candidate);
-                if (candidateSolid == null) continue;
-
-                try
-                {
-                    var intersection = BooleanOperationsUtils.ExecuteBooleanOperation(
-                        floorSolid, candidateSolid, BooleanOperationsType.Intersect);
-
-                    if (intersection != null && intersection.Volume > 1e-9) clashResults.Add(candidate.Id);
-                }
-                catch (InvalidOperationException)
-                {
-                    // Lidar com falhas na operação booleana
-                }
+                bpElevation = param.AsDouble();
+                break;
             }
-
-            // Adicionar ao dicionário apenas se houver colisões
-            if (clashResults.Count > 0) floorClashesMap[floorId] = clashResults;
         }
 
-        // Exibir resultados para o usuário
-        if (floorClashesMap.Count == 0)
+        // 3. Cria filtro de categorias visíveis na vista ativa
+        var categoryIds = doc.Settings.Categories.Cast<Category>().Select(c => c.Id);
+        var visibleCatFilters = categoryIds
+            .Where(id => !activeView.GetCategoryHidden(id))
+            .Select(id => new ElementCategoryFilter(id))
+            .Cast<ElementFilter>()
+            .ToList();
+        var catFilter = new LogicalOrFilter(visibleCatFilters);
+
+        // 4. Define volume (Outline) de coleta conforme tipo de vista
+        Outline worldOutline;
+
+        if (activeView is ViewPlan viewPlan)
         {
-            TaskDialog.Show("Detecção de Conflitos", "Nenhum conflito foi encontrado entre pisos e elementos.");
-            return Result.Succeeded;
+            // Vista 2D: usa CropBox + ViewRange
+            var cropBox = viewPlan.CropBox;
+            var vr = viewPlan.GetViewRange();
+            var topZ = GetPlaneZ(doc, vr, PlanViewPlane.TopClipPlane, bpElevation);
+            var bottomZ = GetPlaneZ(doc, vr, PlanViewPlane.BottomClipPlane, bpElevation);
+
+            var newMin = new XYZ(cropBox.Min.X, cropBox.Min.Y, bottomZ);
+            var newMax = new XYZ(cropBox.Max.X, cropBox.Max.Y, topZ);
+            worldOutline = new Outline(newMin, newMax);
+        }
+        else if (activeView is View3D view3D && view3D.IsSectionBoxActive)
+        {
+            var sectBox = view3D.GetSectionBox();
+            var tr = sectBox.Transform;
+
+            // Gera os 8 vértices da section box
+            var corners = new List<XYZ>();
+            var min = sectBox.Min;
+            var max = sectBox.Max;
+            var xs = new[] { min.X, max.X };
+            var ys = new[] { min.Y, max.Y };
+            var zs = new[] { min.Z, max.Z };
+
+            foreach (var x in xs)
+            foreach (var y in ys)
+            foreach (var z in zs)
+                corners.Add(tr.OfPoint(new XYZ(x, y, z)));
+
+            // Recalcula os limites alinhados aos eixos do mundo
+            double xMin = corners.Min(p => p.X), xMax = corners.Max(p => p.X);
+            double yMin = corners.Min(p => p.Y), yMax = corners.Max(p => p.Y);
+            double zMin = corners.Min(p => p.Z), zMax = corners.Max(p => p.Z);
+
+            worldOutline = new Outline(new XYZ(xMin, yMin, zMin),
+                new XYZ(xMax, yMax, zMax));
+        }
+        else
+        {
+            TaskDialog.Show("Erro", "Tipo de vista não suportado. Use vista plan ou 3D.");
+            return Result.Failed;
         }
 
-        // Contar o número total de conflitos
-        var totalClashes = floorClashesMap.Values.Sum(list => list.Count);
-
-        // Criar uma mensagem resumida
-        var summaryBuilder = new StringBuilder();
-        summaryBuilder.AppendLine($"Foram encontrados {totalClashes} conflitos em {floorClashesMap.Count} pisos.");
-        summaryBuilder.AppendLine();
-        summaryBuilder.AppendLine("Resumo por piso:");
-
-        foreach (var kvp in floorClashesMap)
+        // 5. Coleta elementos de todos os links, transformando volume para o espaço de cada link
+        var allCollected = new List<Element>();
+        foreach (var linkInst in linkInstances)
         {
-            var floor = doc.GetElement(kvp.Key);
-            var floorName = floor.Name;
-            if (string.IsNullOrEmpty(floorName))
-                floorName = $"ID: {kvp.Key.IntegerValue}";
+            var linkDoc = linkInst.GetLinkDocument();
+            if (linkDoc == null) continue;
 
-            summaryBuilder.AppendLine($"- {floorName}: {kvp.Value.Count} conflitos");
+            // Transform do espaço mundial para o espaço do link
+            var transform = linkInst.GetTotalTransform();
+            var inv = transform.Inverse;
+            var linkMin = inv.OfPoint(worldOutline.MinimumPoint);
+            var linkMax = inv.OfPoint(worldOutline.MaximumPoint);
+            var linkOutline = new Outline(linkMin, linkMax);
+            var bbFilter = new BoundingBoxIntersectsFilter(linkOutline);
+
+            // Combina filtros de categoria e bounding box no link
+            var filter = new LogicalAndFilter(catFilter, bbFilter);
+            var collected = new FilteredElementCollector(linkDoc)
+                .WherePasses(filter)
+                .WhereElementIsNotElementType()
+                .ToElements();
+
+            allCollected.AddRange(collected);
         }
 
-        // Perguntar ao usuário se deseja visualizar os conflitos
-        var td = new TaskDialog("Resultado da Detecção de Conflitos")
-        {
-            MainInstruction = $"Foram encontrados {totalClashes} conflitos.",
-            MainContent = summaryBuilder.ToString(),
-            CommonButtons = TaskDialogCommonButtons.Ok,
-            DefaultButton = TaskDialogResult.Ok
-        };
-
-        td.AddCommandLink(TaskDialogCommandLinkId.CommandLink1, "Visualizar conflitos na vista ativa");
-        td.AddCommandLink(TaskDialogCommandLinkId.CommandLink2, "Exportar relatório detalhado");
-
-        var result = td.Show();
-
-        if (result == TaskDialogResult.CommandLink1)
-            // Visualizar conflitos na vista ativa
-            HighlightClashesInActiveView(uiDoc, floorClashesMap);
-        else if (result == TaskDialogResult.CommandLink2)
-            // Exportar relatório detalhado
-            ExportClashReport(doc, floorClashesMap);
-
+        // 6. Exibe total de elementos coletados
+        TaskDialog.Show("Resultado", $"Total de elementos coletados: {allCollected.Count}");
         return Result.Succeeded;
     }
 
-    /// <summary>
-    ///     Destaca os elementos em conflito na vista ativa
-    /// </summary>
-    private void HighlightClashesInActiveView(UIDocument uiDoc, Dictionary<ElementId, List<ElementId>> floorClashesMap)
+    private double GetPlaneZ(Document doc, PlanViewRange vr, PlanViewPlane plane, double bpElevation)
     {
-        // Coletar todos os IDs em conflito (pisos e elementos)
-        var allClashIds = new List<ElementId>();
-
-        foreach (var kvp in floorClashesMap)
+        try
         {
-            allClashIds.Add(kvp.Key); // Adicionar o piso
-            allClashIds.AddRange(kvp.Value); // Adicionar elementos em conflito
+            var level = doc.GetElement(vr.GetLevelId(plane)) as Level;
+            return level.Elevation + vr.GetOffset(plane) - bpElevation;
         }
-
-        // Selecionar todos os elementos em conflito na vista ativa
-        uiDoc.Selection.SetElementIds(allClashIds);
-
-        // Opcionalmente, você pode destacar os elementos usando cores
-        using (var transaction = new Transaction(uiDoc.Document, "Destacar Conflitos"))
+        catch
         {
-            transaction.Start();
-
-            // Aplicar override gráfico nos elementos conflitantes
-            var view = uiDoc.ActiveView;
-            var overrideSettings = new OverrideGraphicSettings();
-            overrideSettings.SetProjectionLineColor(new Color(255, 0, 0)); // Vermelho
-            overrideSettings.SetSurfaceForegroundPatternColor(new Color(255, 0, 0));
-
-            foreach (var clashId in allClashIds) view.SetElementOverrides(clashId, overrideSettings);
-
-            transaction.Commit();
+            var cutLevel = doc.GetElement(vr.GetLevelId(PlanViewPlane.CutPlane)) as Level;
+            return cutLevel.Elevation + vr.GetOffset(PlanViewPlane.CutPlane) - bpElevation;
         }
-
-        // Mostrar mensagem de orientação ao usuário
-        TaskDialog.Show("Visualização de Conflitos",
-            "Os elementos em conflito foram selecionados e destacados em vermelho na vista ativa.\n\n" +
-            "Os destaques serão removidos quando você fechar esta vista ou usar o comando 'Remover Sobreposições'.");
-    }
-
-    /// <summary>
-    ///     Exporta um relatório detalhado dos conflitos
-    /// </summary>
-    private void ExportClashReport(Document doc, Dictionary<ElementId, List<ElementId>> floorClashesMap)
-    {
-        var saveDialog = new SaveFileDialog
-        {
-            Title = "Salvar Relatório de Conflitos",
-            Filter = "Arquivos CSV (*.csv)|*.csv",
-            DefaultExt = "csv",
-            FileName = "Relatorio_Conflitos_Pisos.csv"
-        };
-
-        if (saveDialog.ShowDialog() != true)
-            return;
-
-        var reportBuilder = new StringBuilder();
-
-        // Cabeçalho do relatório
-        reportBuilder.AppendLine("ID do Piso,Nome do Piso,ID do Elemento,Categoria do Elemento,Nome do Elemento");
-
-        // Gerar linhas do relatório
-        foreach (var kvp in floorClashesMap)
-        {
-            var floorId = kvp.Key;
-            var floor = doc.GetElement(floorId);
-            var floorName = floor.Name;
-            if (string.IsNullOrEmpty(floorName))
-                floorName = "Sem Nome";
-
-            foreach (var elementId in kvp.Value)
-            {
-                var element = doc.GetElement(elementId);
-                var elementCategory = element.Category?.Name ?? "Sem Categoria";
-                var elementName = element.Name;
-                if (string.IsNullOrEmpty(elementName))
-                    elementName = "Sem Nome";
-
-                reportBuilder.AppendLine(
-                    $"{floorId.IntegerValue},\"{floorName}\",{elementId.IntegerValue},\"{elementCategory}\",\"{elementName}\"");
-            }
-        }
-
-        // Salvar o relatório
-        File.WriteAllText(saveDialog.FileName, reportBuilder.ToString());
-
-        // Informar ao usuário
-        TaskDialog.Show("Exportação Concluída",
-            $"O relatório de conflitos foi salvo em:\n{saveDialog.FileName}");
-    }
-
-    /// <summary>
-    ///     Encontra elementos em colisão em um documento vinculado usando uma estratégia otimizada de duas etapas.
-    /// </summary>
-    /// <param name="hostElement">O elemento no documento hospedeiro.</param>
-    /// <param name="linkInstance">A instância do vínculo a ser verificada.</param>
-    /// <returns>Uma lista de ElementIds dos elementos em colisão.</returns>
-    public List<ElementId> FindClashesInLink_Optimized(Element hostElement, RevitLinkInstance linkInstance)
-    {
-        var clashResults = new List<ElementId>();
-        var linkDoc = linkInstance.GetLinkDocument();
-        if (linkDoc == null) return clashResults;
-
-        // Obter sólido do hospedeiro e transformação do vínculo
-        var hostSolid = GetSolidFromElement(hostElement);
-        if (hostSolid == null) return clashResults;
-
-        var transform = linkInstance.GetTotalTransform();
-        var inverseTransform = transform.Inverse;
-
-        // --- ETAPA 1: FILTRAGEM GROSSEIRA COM BOUNDINGBOX ---
-
-        // Obter a caixa delimitadora do hospedeiro e transformá-la para o espaço do vínculo
-        var hostBBox = hostElement.get_BoundingBox(null);
-        var linkSpaceOutline = TransformBoundingBox(hostBBox, inverseTransform);
-
-        var bboxFilter = new BoundingBoxIntersectsFilter(linkSpaceOutline);
-
-        // Coletar candidatos iniciais no documento vinculado
-        var candidateCollector = new FilteredElementCollector(linkDoc);
-        candidateCollector.WherePasses(bboxFilter);
-        IList<Element> candidateElements = candidateCollector.ToElements();
-
-        if (candidateElements.Count == 0) return clashResults;
-
-        // --- ETAPA 2: FILTRAGEM FINA COM SÓLIDOS ---
-
-        // Transformar o sólido do hospedeiro para o espaço do vínculo (apenas uma vez)
-        var transformedHostSolid = SolidUtils.CreateTransformed(hostSolid, inverseTransform);
-
-        // Iterar APENAS sobre os candidatos
-        foreach (var candidate in candidateElements)
-        {
-            var candidateSolid = GetSolidFromElement(candidate);
-            if (candidateSolid == null) continue;
-
-            // Usar a operação booleana para uma verificação de interseção precisa
-            try
-            {
-                var intersection = BooleanOperationsUtils.ExecuteBooleanOperation(
-                    transformedHostSolid, candidateSolid, BooleanOperationsType.Intersect);
-
-                if (intersection != null && intersection.Volume > 1e-9) // Usar uma pequena tolerância para o volume
-                    clashResults.Add(candidate.Id);
-            }
-            catch (InvalidOperationException)
-            {
-            }
-        }
-
-        return clashResults;
-    }
-
-    /// <summary>
-    ///     Transforma uma BoundingBoxXYZ aplicando uma transformação a seus cantos.
-    /// </summary>
-    private Outline TransformBoundingBox(BoundingBoxXYZ bbox, Transform transform)
-    {
-        var pt1 = transform.OfPoint(bbox.Min);
-        var pt2 = transform.OfPoint(new XYZ(bbox.Max.X, bbox.Min.Y, bbox.Min.Z));
-        //... transformar todos os 8 pontos...
-        var pt8 = transform.OfPoint(bbox.Max);
-
-        // Encontrar os novos min/max para criar o Outline
-        double minX = double.MaxValue, minY = double.MaxValue, minZ = double.MaxValue;
-        double maxX = double.MinValue, maxY = double.MinValue, maxZ = double.MinValue;
-
-        // Lógica para iterar sobre os 8 pontos e encontrar os novos min/max
-        //...
-
-        return new Outline(new XYZ(minX, minY, minZ), new XYZ(maxX, maxY, maxZ));
-    }
-
-    /// <summary>
-    ///     Função auxiliar para extrair a primeira geometria sólida e não vazia de um elemento.
-    /// </summary>
-    private Solid GetSolidFromElement(Element element)
-    {
-        var options = new Options { ComputeReferences = true, DetailLevel = ViewDetailLevel.Fine };
-        var geomElem = element.get_Geometry(options);
-        if (geomElem == null) return null;
-
-        foreach (var geomObj in geomElem)
-        {
-            if (geomObj is Solid solid && solid.Volume > 0) return solid;
-            // Também pode ser necessário iterar sobre GeometryInstance para encontrar sólidos aninhados.
-            if (geomObj is GeometryInstance geomInst)
-                foreach (var nestedGeomObj in geomInst.GetInstanceGeometry())
-                    if (nestedGeomObj is Solid nestedSolid && nestedSolid.Volume > 0)
-                        return nestedSolid;
-        }
-
-        return null;
     }
 }

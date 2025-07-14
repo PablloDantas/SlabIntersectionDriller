@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClashOpenings.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IExternalAppRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Application/Interfaces/IExternalAppRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IOpeningService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Application/Interfaces/IOpeningService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/BuildingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Domain/Entities/Elements/BuildingComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Floor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Floor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Opening.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Opening.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Pipe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Pipe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/BoundingBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/BoundingBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/GeometryElementAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/GeometryElementAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitFloorAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitFloorAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitPipeAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitPipeAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitBuildingComponentFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitBuildingComponentFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Commands/ClashDetectionCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +96,18 @@
       <workItem from="1752436157616" duration="1734000" />
       <workItem from="1752441007194" duration="3444000" />
       <workItem from="1752454536848" duration="2845000" />
+      <workItem from="1752457858205" duration="59000" />
+      <workItem from="1752486483918" duration="4017000" />
     </task>
+    <task id="LOCAL-00001" summary="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files.">
+      <option name="closed" value="true" />
+      <created>1752457905404</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752457905404</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +117,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -140,6 +135,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs</url>
+          <line>115</line>
+          <properties documentPath="C:\Dev\ClashOpenings\Presentation\Commands\SlabsOpeningsCommand.cs" containingFunctionPresentation="Method 'Execute'">
+            <startOffsets>
+              <option value="4642" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4811" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
