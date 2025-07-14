@@ -2,7 +2,7 @@
 
 namespace ClashOpenings.Core.Application.Interfaces;
 
-public interface IBuildingComponentAdapter<T>
+public interface IBuildingComponentAdapter<in T, in TU>
 {
-    public BuildingComponent? ToDomain(T component);
+    public BuildingComponent? ToDomain(T component, TU view);
 }

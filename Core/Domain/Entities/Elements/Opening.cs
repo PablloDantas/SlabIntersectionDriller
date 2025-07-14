@@ -8,8 +8,9 @@ public class Opening(
     float length,
     float height,
     Id id,
+    BoundingBox boundingBox,
     Solid? solid = null)
-    : BuildingComponent(id, solid)
+    : BuildingComponent(id, boundingBox, solid)
 {
     public float Width { get; private set; } = width;
     public float Length { get; private set; } = length;

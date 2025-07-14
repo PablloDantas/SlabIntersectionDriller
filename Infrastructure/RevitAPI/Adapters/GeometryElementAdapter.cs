@@ -2,7 +2,7 @@ using Autodesk.Revit.DB;
 using SolidDomain = ClashOpenings.Core.Domain.ValueObjects.Geometries.Solid;
 using RevitSolid = Autodesk.Revit.DB.Solid;
 
-namespace ClashOpenings.Infrastructure.RevitAPI;
+namespace ClashOpenings.Infrastructure.RevitAPI.Adapters;
 
 public static class GeometryElementAdapter
 {

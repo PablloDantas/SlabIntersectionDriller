@@ -1,6 +1,8 @@
-﻿namespace ClashOpenings.Core.Application.Interfaces;
+﻿using ClashOpenings.Core.Domain.Entities.Elements;
 
-public interface IBuildingComponentFactory<T>
+namespace ClashOpenings.Core.Application.Interfaces;
+
+public interface IBuildingComponentFactory<in T, in TU>
 {
-    public IBuildingComponentAdapter<T> CreateAdapter(T component);
+    public BuildingComponent? ToDomain(T component, TU view);
 }
