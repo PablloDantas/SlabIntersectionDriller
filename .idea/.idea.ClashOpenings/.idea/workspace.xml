@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Presentation/Commands/ClashDetectionCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +36,83 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/ClashDetectionCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/RelayCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/App.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/App.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/App.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/App.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/App.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/App.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/RevitExternalAppSetup/Handlers/ClashDetectionHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/ViewModels/ClashSelectionViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/Presentation/Views/ClashSelectionView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/23/bfd6a9a0/ItemFactoryBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/36/d6ccbddb/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/11/05328caf/UIApplication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/aa/e99ba385/_003CModule_003E.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/487764c4dc815ef1e9090514895a23ed9e2d8eda1f7fd6958ac0fb25e8437/Guid.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -97,7 +174,12 @@
       <workItem from="1752441007194" duration="3444000" />
       <workItem from="1752454536848" duration="2845000" />
       <workItem from="1752457858205" duration="59000" />
-      <workItem from="1752486483918" duration="4017000" />
+      <workItem from="1752486483918" duration="4671000" />
+      <workItem from="1752498343006" duration="4762000" />
+      <workItem from="1752504179520" duration="378000" />
+      <workItem from="1752504783946" duration="3884000" />
+      <workItem from="1752574720587" duration="1776000" />
+      <workItem from="1752577373523" duration="19142000" />
     </task>
     <task id="LOCAL-00001" summary="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files.">
       <option name="closed" value="true" />
@@ -107,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752457905404</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor `SlabsOpeningsCommand` to simplify logic, introduce `ClashDetectionCommand` for comprehensive clash handling, and update workspace configuration files.">
+      <option name="closed" value="true" />
+      <created>1752491727431</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752491727431</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +208,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files." />
+    <MESSAGE value="Refactor `SlabsOpeningsCommand` to simplify logic, introduce `ClashDetectionCommand` for comprehensive clash handling, and update workspace configuration files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor `SlabsOpeningsCommand` to simplify logic, introduce `ClashDetectionCommand` for comprehensive clash handling, and update workspace configuration files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -135,19 +226,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs</url>
-          <line>115</line>
-          <properties documentPath="C:\Dev\ClashOpenings\Presentation\Commands\SlabsOpeningsCommand.cs" containingFunctionPresentation="Method 'Execute'">
-            <startOffsets>
-              <option value="4642" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4811" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

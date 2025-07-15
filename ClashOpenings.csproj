@@ -10,6 +10,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Reference Include="AdWindows">
+            <HintPath>..\..\Program Files\Autodesk\Revit 2025\AdWindows.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
         <Reference Include="RevitAPI">
             <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
             <Private>False</Private>
