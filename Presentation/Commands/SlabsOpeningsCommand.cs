@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
-using ClashOpenings.Presentation.ViewModels;
-using ClashOpenings.Presentation.Views;
-using System.Text;
 
 namespace ClashOpenings.Presentation.Commands;
 
@@ -22,27 +17,62 @@ public class SlabsOpeningsCommand : IExternalCommand
     /// </summary>
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
-        var uiDoc = commandData.Application.ActiveUIDocument;
+        var uiApp = commandData.Application;
+
+        try
+        {
+            // Verifica se o painel já está registrado 
+            var dockablePane = uiApp.GetDockablePane(ClashSelectionDockablePaneId.Id);
+            // O painel já está registrado, então apenas mostramos
+            dockablePane.Show();
+        }
+        catch (Exception)
+        {
+            // O painel ainda não foi registrado
+            try
+            {
+                // Registramos o painel apenas uma vez
+                if (DockablePaneUtility.CurrentPane == null)
+                {
+                    var registerCommand = new RegisterClashSelectionPaneCommand();
+                    var result = registerCommand.Execute(commandData, ref message, elements);
+
+                    if (result != Result.Succeeded) return result;
+                }
+
+                // Mostramos o painel
+                var dockPane = uiApp.GetDockablePane(ClashSelectionDockablePaneId.Id);
+                dockPane.Show();
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+                return Result.Failed;
+            }
+        }
+
+        return Result.Succeeded;
+    }
+
+    /// <summary>
+    ///     Método que executa a detecção de colisão com os links selecionados
+    /// </summary>
+    public Result ExecuteWithSelectedLinks(
+        UIDocument uiDoc,
+        ref string message,
+        ElementSet elements,
+        RevitLinkInstance selectedLinkInstance1,
+        RevitLinkInstance selectedLinkInstance2)
+    {
+        // O resto do código permanece igual
         var doc = uiDoc.Document;
         var activeView = doc.ActiveView;
-
-        // 1. Coleta todas as instâncias de link do Revit no projeto.
-        var viewModel = new ClashSelectionViewModel(uiDoc);
-        var view = new ClashSelectionView(viewModel);
-
-        if (view.ShowDialog() != true)
-            return Result.Cancelled;
-
-        var selectedLinkInstance1 = viewModel.SelectedLinkInstance1;
-        var selectedLinkInstance2 = viewModel.SelectedLinkInstance2;
 
         if (selectedLinkInstance1 == null || selectedLinkInstance2 == null)
         {
             TaskDialog.Show("Erro", "Dois modelos de link devem ser selecionados.");
             return Result.Failed;
         }
-        
-        
 
         // 2. Obtém a elevação do ponto base do projeto para cálculos de coordenadas.
         var basePoints = new FilteredElementCollector(doc)
@@ -60,7 +90,7 @@ public class SlabsOpeningsCommand : IExternalCommand
             }
         }
 
-        // 3. Cria um filtro para incluir apenas categorias visíveis na vista ativa.
+// 3. Cria um filtro para incluir apenas categorias visíveis na vista ativa.
         var categoryIds = doc.Settings.Categories.Cast<Category>().Select(c => c.Id);
         var visibleCatFilters = categoryIds
             .Where(id => !activeView.GetCategoryHidden(id))
@@ -279,17 +309,13 @@ public class SlabsOpeningsCommand : IExternalCommand
 
         TaskDialog.Show("Resultado da Detecção de Conflitos", summary.ToString());
 
-
         return Result.Succeeded;
     }
 
-    /// <summary>
-    ///     Encontra a face plana horizontal mais alta de um sólido.
-    /// </summary>
-    /// <param name="solid">O sólido a ser analisado.</param>
-    /// <returns>A face superior, ou nulo se nenhuma for encontrada.</returns>
+    // Métodos auxiliares permanecem iguais
     private PlanarFace GetTopFace(Solid solid)
     {
+        // Implementação original...
         PlanarFace topFace = null;
         var highestZ = double.MinValue;
 
@@ -304,13 +330,9 @@ public class SlabsOpeningsCommand : IExternalCommand
         return topFace;
     }
 
-    /// <summary>
-    ///     Extrai a geometria sólida de um elemento do Revit.
-    /// </summary>
-    /// <param name="element">O elemento do qual extrair o sólido.</param>
-    /// <returns>O primeiro sólido não vazio encontrado no elemento, ou nulo se nenhum for encontrado.</returns>
     private Solid GetSolidFromElement(Element element)
     {
+        // Implementação original...
         var options = new Options { ComputeReferences = true, DetailLevel = ViewDetailLevel.Fine };
         var geomElem = element.get_Geometry(options);
         if (geomElem == null) return null;
@@ -327,16 +349,9 @@ public class SlabsOpeningsCommand : IExternalCommand
         return null;
     }
 
-    /// <summary>
-    ///     Calcula a coordenada Z de um plano de vista, ajustada pela elevação do ponto base.
-    /// </summary>
-    /// <param name="doc">O documento do Revit.</param>
-    /// <param name="vr">O intervalo da vista do plano.</param>
-    /// <param name="plane">O plano de vista específico (por exemplo, plano de corte, topo).</param>
-    /// <param name="bpElevation">A elevação do ponto base do projeto.</param>
-    /// <returns>A coordenada Z calculada.</returns>
     private double GetPlaneZ(Document doc, PlanViewRange vr, PlanViewPlane plane, double bpElevation)
     {
+        // Implementação original...
         try
         {
             var level = doc.GetElement(vr.GetLevelId(plane)) as Level;

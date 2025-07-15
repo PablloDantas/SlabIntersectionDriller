@@ -1,107 +1,150 @@
-using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Input;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using ClashOpenings.Presentation.Handlers;
 
-namespace ClashOpenings.Presentation.ViewModels
+namespace ClashOpenings.Presentation.ViewModels;
+
+public class ClashSelectionViewModel : INotifyPropertyChanged
 {
-    public class ClashSelectionViewModel : INotifyPropertyChanged
+    private readonly UIDocument _uiDoc;
+
+    // Adicione estes campos para o ExternalEvent
+    private readonly ClashDetectionExternalEventHandler _eventHandler;
+    private readonly ExternalEvent _externalEvent;
+    private ICommand _runClashDetectionCommand;
+    private RevitLinkInstance _selectedLinkInstance1;
+    private RevitLinkInstance _selectedLinkInstance2;
+    private string _statusMessage;
+
+    public ClashSelectionViewModel(UIDocument uiDoc)
     {
-        private RevitLinkInstance _selectedLinkInstance1;
-        private RevitLinkInstance _selectedLinkInstance2;
+        _uiDoc = uiDoc;
+        var doc = uiDoc.Document;
 
-        public ObservableCollection<RevitLinkInstance> LinkInstances { get; set; }
+        var linkInstances = new FilteredElementCollector(doc)
+            .OfClass(typeof(RevitLinkInstance))
+            .Cast<RevitLinkInstance>()
+            .ToList();
+        LinkInstances = new ObservableCollection<RevitLinkInstance>(linkInstances);
 
-        public RevitLinkInstance SelectedLinkInstance1
-        {
-            get => _selectedLinkInstance1;
-            set
+        // Configurar o ExternalEvent
+        _eventHandler = new ClashDetectionExternalEventHandler();
+        _eventHandler.SetStatusCallback(status => StatusMessage = status);
+        _externalEvent = ExternalEvent.Create(_eventHandler);
+
+        _runClashDetectionCommand = new RelayCommand(
+            obj =>
             {
-                if (_selectedLinkInstance1 != value)
+                try
                 {
-                    _selectedLinkInstance1 = value;
-                    OnPropertyChanged(nameof(SelectedLinkInstance1));
-                }
-            }
-        }
+                    // Atualizar os links selecionados no handler
+                    _eventHandler.SetLinks(SelectedLinkInstance1, SelectedLinkInstance2);
 
-        public RevitLinkInstance SelectedLinkInstance2
-        {
-            get => _selectedLinkInstance2;
-            set
-            {
-                if (_selectedLinkInstance2 != value)
+                    // Disparar o evento externo
+                    _externalEvent.Raise();
+
+                    StatusMessage = "Running clash detection...";
+                }
+                catch (Exception ex)
                 {
-                    _selectedLinkInstance2 = value;
-                    OnPropertyChanged(nameof(SelectedLinkInstance2));
+                    StatusMessage = $"Error: {ex.Message}";
+                    TaskDialog.Show("Error", $"Failed to run clash detection: {ex.Message}");
                 }
-            }
-        }
-
-        public ICommand RunClashDetectionCommand { get; }
-
-        public ClashSelectionViewModel(UIDocument uiDoc)
-        {
-            var doc = uiDoc.Document;
-            
-            var linkInstances = new FilteredElementCollector(doc)
-                .OfClass(typeof(RevitLinkInstance))
-                .Cast<RevitLinkInstance>()
-                .ToList();
-            LinkInstances = new ObservableCollection<RevitLinkInstance>(linkInstances);
-
-            RunClashDetectionCommand = new RelayCommand(ExecuteClashDetection, CanExecuteClashDetection);
-        }
-
-        private bool CanExecuteClashDetection(object obj)
-        {
-            return SelectedLinkInstance1 != null &&
+            },
+            obj => SelectedLinkInstance1 != null &&
                    SelectedLinkInstance2 != null &&
-                   SelectedLinkInstance1.Id != SelectedLinkInstance2.Id;
-        }
+                   SelectedLinkInstance1.Id != SelectedLinkInstance2.Id);
+    }
 
-        private void ExecuteClashDetection(object obj)
+    public ObservableCollection<RevitLinkInstance> LinkInstances { get; set; }
+
+    public RevitLinkInstance SelectedLinkInstance1
+    {
+        get => _selectedLinkInstance1;
+        set
         {
-            // The logic is handled in the command, this command is just to enable/disable the button
-            // and close the dialog. The main command will retrieve the selected items from the ViewModel.
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (_selectedLinkInstance1 != value)
+            {
+                _selectedLinkInstance1 = value;
+                OnPropertyChanged(nameof(SelectedLinkInstance1));
+            }
         }
     }
 
-    public class RelayCommand : ICommand
+    public RevitLinkInstance SelectedLinkInstance2
     {
-        private readonly Action<object> _execute;
-        private readonly Predicate<object> _canExecute;
-
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
+        get => _selectedLinkInstance2;
+        set
         {
-            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-            _canExecute = canExecute;
+            if (_selectedLinkInstance2 != value)
+            {
+                _selectedLinkInstance2 = value;
+                OnPropertyChanged(nameof(SelectedLinkInstance2));
+            }
         }
+    }
 
-        public bool CanExecute(object parameter)
+    public string StatusMessage
+    {
+        get => _statusMessage;
+        set
         {
-            return _canExecute == null || _canExecute(parameter);
+            if (_statusMessage != value)
+            {
+                _statusMessage = value;
+                OnPropertyChanged(nameof(StatusMessage));
+            }
         }
+    }
 
-        public void Execute(object parameter)
+    public ICommand RunClashDetectionCommand
+    {
+        get => _runClashDetectionCommand;
+        set
         {
-            _execute(parameter);
+            if (_runClashDetectionCommand != value)
+            {
+                _runClashDetectionCommand = value;
+                OnPropertyChanged(nameof(RunClashDetectionCommand));
+            }
         }
+    }
 
-        public event EventHandler CanExecuteChanged
-        {
-            add => CommandManager.RequerySuggested += value;
-            remove => CommandManager.RequerySuggested -= value;
-        }
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+
+public class RelayCommand : ICommand
+{
+    private readonly Predicate<object> _canExecute;
+    private readonly Action<object> _execute;
+
+    public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
+    {
+        _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+        _canExecute = canExecute;
+    }
+
+    public bool CanExecute(object parameter)
+    {
+        return _canExecute == null || _canExecute(parameter);
+    }
+
+    public void Execute(object parameter)
+    {
+        _execute(parameter);
+    }
+
+    public event EventHandler CanExecuteChanged
+    {
+        add => CommandManager.RequerySuggested += value;
+        remove => CommandManager.RequerySuggested -= value;
     }
 }
