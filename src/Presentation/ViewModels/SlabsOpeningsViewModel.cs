@@ -3,47 +3,38 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using ClashOpenings.src.Handlers;
+using ClashOpenings.src.Services.Collectors;
 
 namespace ClashOpenings.src.Presentation.ViewModels;
 
-public class ClashSelectionViewModel : INotifyPropertyChanged
+public class SlabsOpeningsViewModel : INotifyPropertyChanged
 {
-    // Adicione estes campos para o ExternalEvent
-    private readonly ClashDetectionExternalEventHandler _eventHandler;
-    private readonly ExternalEvent _externalEvent;
-    private readonly UIDocument _uiDoc;
     private ICommand _runClashDetectionCommand;
-    private RevitLinkInstance _selectedLinkInstance1;
-    private RevitLinkInstance _selectedLinkInstance2;
+    private RevitLinkInstance? _selectedLinkInstance1;
+    private RevitLinkInstance? _selectedLinkInstance2;
     private string _statusMessage;
 
-    public ClashSelectionViewModel(UIDocument uiDoc)
+    public SlabsOpeningsViewModel(UIDocument uiDoc)
     {
-        _uiDoc = uiDoc;
-        var doc = uiDoc.Document;
+        var document = uiDoc.Document;
 
-        var linkInstances = new FilteredElementCollector(doc)
-            .OfClass(typeof(RevitLinkInstance))
-            .Cast<RevitLinkInstance>()
-            .ToList();
-        LinkInstances = new ObservableCollection<RevitLinkInstance>(linkInstances);
+        LinkInstances = new ObservableCollection<RevitLinkInstance>(ClassCollectors.AllLinkInstances(document));
 
         // Configurar o ExternalEvent
-        _eventHandler = new ClashDetectionExternalEventHandler();
-        _eventHandler.SetStatusCallback(status => StatusMessage = status);
-        _externalEvent = ExternalEvent.Create(_eventHandler);
+        var eventHandler = new SlabsOpeningsExternalEventHandler();
+        eventHandler.SetStatusCallback(status => StatusMessage = status);
+        var externalEvent = ExternalEvent.Create(eventHandler);
 
-        _runClashDetectionCommand = new RelayCommand(
+        _runClashDetectionCommand = new SlabsOpeningsRelayCommand(
             obj =>
             {
                 try
                 {
                     // Atualizar os links selecionados no handler
-                    _eventHandler.SetLinks(SelectedLinkInstance1, SelectedLinkInstance2);
+                    eventHandler.SetLinks(SelectedLinkInstance1, SelectedLinkInstance2);
 
                     // Disparar o evento externo
-                    _externalEvent.Raise();
+                    externalEvent.Raise();
 
                     StatusMessage = "Running clash detection...";
                 }
@@ -60,7 +51,7 @@ public class ClashSelectionViewModel : INotifyPropertyChanged
 
     public ObservableCollection<RevitLinkInstance> LinkInstances { get; set; }
 
-    public RevitLinkInstance SelectedLinkInstance1
+    public RevitLinkInstance? SelectedLinkInstance1
     {
         get => _selectedLinkInstance1;
         set
@@ -73,7 +64,7 @@ public class ClashSelectionViewModel : INotifyPropertyChanged
         }
     }
 
-    public RevitLinkInstance SelectedLinkInstance2
+    public RevitLinkInstance? SelectedLinkInstance2
     {
         get => _selectedLinkInstance2;
         set
@@ -117,33 +108,5 @@ public class ClashSelectionViewModel : INotifyPropertyChanged
     protected virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-}
-
-public class RelayCommand : ICommand
-{
-    private readonly Predicate<object> _canExecute;
-    private readonly Action<object> _execute;
-
-    public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
-    {
-        _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-        _canExecute = canExecute;
-    }
-
-    public bool CanExecute(object parameter)
-    {
-        return _canExecute == null || _canExecute(parameter);
-    }
-
-    public void Execute(object parameter)
-    {
-        _execute(parameter);
-    }
-
-    public event EventHandler CanExecuteChanged
-    {
-        add => CommandManager.RequerySuggested += value;
-        remove => CommandManager.RequerySuggested -= value;
     }
 }

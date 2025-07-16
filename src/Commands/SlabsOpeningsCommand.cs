@@ -23,7 +23,7 @@ public class SlabsOpeningsCommand : IExternalCommand
         var uiApp = commandData.Application;
         var uiDoc = uiApp.ActiveUIDocument;
 
-        var viewModel = new ClashSelectionViewModel(uiDoc);
+        var viewModel = new SlabsOpeningsViewModel(uiDoc);
         ClashOpeningsApp.SlabsOpeningsPane?.SetViewModel(viewModel);
 
         var dockablePane = ClashOpeningsApp.DockablePaneCreatorService?.Get(ClashOpeningsApp.SlabsOpeningsGuid);
@@ -41,10 +41,10 @@ public class SlabsOpeningsCommand : IExternalCommand
     /// </summary>
     public Result ExecuteWithSelectedLinks(
         UIDocument uiDoc,
-        ref string message,
+        ref string? message,
         ElementSet elements,
-        RevitLinkInstance selectedLinkInstance1,
-        RevitLinkInstance selectedLinkInstance2)
+        RevitLinkInstance? selectedLinkInstance1,
+        RevitLinkInstance? selectedLinkInstance2)
     {
         // O resto do código permanece igual
         var doc = uiDoc.Document;

@@ -5,61 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/Collectors/ClassCollectors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClashOpenings.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Features/ClashDetection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Features/CreateOpenings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IExternalAppRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IIntersectionService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IOpeningService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/BuildingProject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/BuildingComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Floor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Opening.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Pipe.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Identifiers/Id.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Intersection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/Enums/Unit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Diameter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Dimension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Length.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Thickness.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/BoundingBox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Geometry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Line.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Solid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Xyz.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/GeometryElementAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitBoundingBoxAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitFloorAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitIdAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitPipeAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitXyzAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/GeometrySetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitBuildingComponentFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitOpeningCreation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Handlers/ClashDetectionExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/ClashDetectionExternalEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Helpers/ImageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Resources/Icons/SlabsOpenings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/Icons/SlabsOpenings.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Resources/Manifest/ClashOpenings.addin" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/Manifest/ClashOpenings.addin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/ClashOpeningsApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/Entities/Data/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/ViewModels/ClashSelectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/ClashSelectionViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionDockablePane.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionDockablePane.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Handlers/ClashDetectionExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/ClashSelectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +71,17 @@
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/23/bfd6a9a0/ItemFactoryBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/36/d6ccbddb/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/6e/84b37aa7/RevitLinkInstance.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/ee/b19d319a/BuiltInCategory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/11/05328caf/UIApplication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/79/b0fa4cd0/DockablePane.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/aa/e99ba385/_003CModule_003E.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/b5/6c29f188/DockablePaneId.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/e191d0e383904777a95c191155a7f09913920/71/359ddb50/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/487764c4dc815ef1e9090514895a23ed9e2d8eda1f7fd6958ac0fb25e8437/Guid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/991eb139ea76b3c23fc28f255d11784f6936b9dd4eec5b584dc531e31e2b2b1/Queue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/c98c4c26354b89d76ffbddb774441bcc9c7ed3559b98dbd6fe39a56fc7eb18/ObservableCollection.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -241,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752640887651</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure.">
+      <option name="closed" value="true" />
+      <created>1752642352063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752642352063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +222,8 @@
     <MESSAGE value="Remove `ClashDetectionCommand` class and related logic." />
     <MESSAGE value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
     <MESSAGE value="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic." />
+    <MESSAGE value="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,6 +239,18 @@
         <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.NullReferenceException" breakIfHandledByUserCode="true" breakIfHandledByOtherCode="false" isInternal="false" displayValue="NullReferenceException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.ArgumentNullException" breakIfHandledByUserCode="true" breakIfHandledByOtherCode="false" isInternal="false" displayValue="ArgumentNullException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,13 +2,13 @@
 using Autodesk.Revit.UI;
 using ClashOpenings.src.Commands;
 
-namespace ClashOpenings.src.Handlers;
+namespace ClashOpenings.src.Presentation.ViewModels;
 
-public class ClashDetectionExternalEventHandler : IExternalEventHandler
+public class SlabsOpeningsExternalEventHandler : IExternalEventHandler
 {
-    private RevitLinkInstance _linkInstance1;
-    private RevitLinkInstance _linkInstance2;
-    private Action<string> _updateStatusCallback;
+    private RevitLinkInstance? _linkInstance1;
+    private RevitLinkInstance? _linkInstance2;
+    private Action<string>? _updateStatusCallback;
 
     public void Execute(UIApplication app)
     {
@@ -16,7 +16,7 @@ public class ClashDetectionExternalEventHandler : IExternalEventHandler
         {
             var uiDoc = app.ActiveUIDocument;
             var command = new SlabsOpeningsCommand();
-            string msg = null;
+            string? msg = null;
             var elems = new ElementSet();
 
             var result = command.ExecuteWithSelectedLinks(
@@ -42,13 +42,13 @@ public class ClashDetectionExternalEventHandler : IExternalEventHandler
         return "Clash Detection External Event Handler";
     }
 
-    public void SetLinks(RevitLinkInstance link1, RevitLinkInstance link2)
+    public void SetLinks(RevitLinkInstance? link1, RevitLinkInstance? link2)
     {
         _linkInstance1 = link1;
         _linkInstance2 = link2;
     }
 
-    public void SetStatusCallback(Action<string> callback)
+    public void SetStatusCallback(Action<string>? callback)
     {
         _updateStatusCallback = callback;
     }

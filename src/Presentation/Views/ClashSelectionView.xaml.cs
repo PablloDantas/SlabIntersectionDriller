@@ -29,8 +29,8 @@ public partial class ClashSelectionView : IDockablePaneProvider
     {
         DataContext = viewModel;
 
-        // Se for um ClashSelectionViewModel, armazenar a referência ao UIDocument
-        if (viewModel is ClashSelectionViewModel vm && vm.GetType().GetField("_uiDoc",
+        // Se for um SlabsOpeningsViewModel, armazenar a referência ao UIDocument
+        if (viewModel is SlabsOpeningsViewModel vm && vm.GetType().GetField("_uiDoc",
                     BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(vm)
                 is UIDocument uiDoc)
             _currentUiDoc = uiDoc;
@@ -38,7 +38,7 @@ public partial class ClashSelectionView : IDockablePaneProvider
 
     private void RunClashButton_Click(object sender, RoutedEventArgs e)
     {
-        if (DataContext is ClashSelectionViewModel viewModel)
+        if (DataContext is SlabsOpeningsViewModel viewModel)
         {
             // Verifica se ambos os links estão selecionados
             if (viewModel.SelectedLinkInstance1 != null &&
