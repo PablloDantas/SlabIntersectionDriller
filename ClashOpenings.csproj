@@ -56,6 +56,10 @@
         <Content Include="Projects\Arquivo do Projeto Estrutural.rvt"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Release\" />
+    </ItemGroup>
+
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <!-- Display build configuration in console -->
         <Exec Command="echo Configuration: $(Configuration)"/>

@@ -35,7 +35,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 
 [Files]
-Source: "C:\Dev\ClashOpenings\bin\Release\net8.0-windows*"; DestDir: "{userappdata}\Autodesk\Revit\Addins\2025\ClashOpenings"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Dev\ClashOpenings\bin\Release\net8.0-windows\*"; DestDir: "{userappdata}\Autodesk\Revit\Addins\2025\ClashOpenings"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Dev\ClashOpenings\Resources\Manifest\ClashOpenings.addin"; DestDir: "{userappdata}\Autodesk\Revit\Addins\2025\"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Dev\ClashOpenings\Resources\Icons\SlabsOpenings.png"; DestDir: "{userappdata}\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Dev\ClashOpenings\Resources\Icons\SlabsOpenings.ico"; DestDir: "{userappdata}\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons"; Flags: ignoreversion recursesubdirs createallsubdirs
