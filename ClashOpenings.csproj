@@ -54,6 +54,9 @@
 
     <ItemGroup>
         <Content Include=".github\workflows\docs.yml"/>
+        <Content Include="projects\Arquivo do Projeto de Furação.rvt" />
+        <Content Include="projects\Arquivo do Projeto de Tubos.rvt" />
+        <Content Include="projects\Arquivo do Projeto Estrutural.rvt" />
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
