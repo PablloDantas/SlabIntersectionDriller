@@ -1,75 +1,78 @@
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
-using System.Collections.Generic;
-using System.Linq;
+using ClashOpenings.src.Services.ClashDetection;
 
-namespace ClashOpenings.src.Services.FamilyInstance
+namespace ClashOpenings.src.Services.FamilyInstance;
+
+public class FamilyPlacementService
 {
-    public class FamilyPlacementService
-    {
-        private readonly Document _doc;
+    private readonly Document _doc;
 
-        public FamilyPlacementService(Document doc)
+    public FamilyPlacementService(Document doc)
+    {
+        _doc = doc;
+    }
+
+    public int CreateOpenings(List<ClashResult> clashResults)
+    {
+        var familySymbol = new FilteredElementCollector(_doc)
+            .OfClass(typeof(FamilySymbol))
+            .Cast<FamilySymbol>()
+            .FirstOrDefault(fs =>
+                fs.Family.Name == "FURO-QUADRADO-LAJE" && fs.Name == "SDR - Furo na laje");
+
+        if (familySymbol == null)
         {
-            _doc = doc;
+            TaskDialog.Show("Error", "Opening family 'FURO-QUADRADO-LAJE' with type 'SDR - Furo na laje' not found.");
+            return 0;
         }
 
-        public int CreateOpenings(Dictionary<XYZ, (double thickness, double diameter)> clashInformation)
+        if (!familySymbol.IsActive) familySymbol.Activate();
+
+        var createdCount = 0;
+        using (var t = new Transaction(_doc, "Create Slab Openings"))
         {
-            var familySymbol = new FilteredElementCollector(_doc)
-                .OfClass(typeof(FamilySymbol))
-                .Cast<FamilySymbol>()
-                .FirstOrDefault(fs =>
-                    fs.Family.Name == "FURO-QUADRADO-LAJE" && fs.Name == "SDR - Furo na laje");
+            t.Start();
 
-            if (familySymbol == null)
+            foreach (var clash in clashResults)
             {
-                TaskDialog.Show("Error", "Opening family 'FURO-QUADRADO-LAJE' with type 'SDR - Furo na laje' not found.");
-                return 0;
-            }
+                var zOffset = UnitUtils.ConvertToInternalUnits(5, UnitTypeId.Centimeters);
+                var insertionPoint = clash.CenterPoint.Add(new XYZ(0, 0, zOffset));
 
-            if (!familySymbol.IsActive)
-            {
-                familySymbol.Activate();
-            }
+                var instance =
+                    _doc.Create.NewFamilyInstance(insertionPoint, familySymbol, StructuralType.NonStructural);
 
-            var createdCount = 0;
-            using (var t = new Transaction(_doc, "Create Slab Openings"))
-            {
-                t.Start();
-
-                foreach (var clash in clashInformation)
+                if (clash.Thickness > 0)
                 {
-                    var zOffset = UnitUtils.ConvertToInternalUnits(5, UnitTypeId.Centimeters);
-                    var insertionPoint = clash.Key.Add(new XYZ(0, 0, zOffset));
+                    var clearance = UnitUtils.ConvertToInternalUnits(10, UnitTypeId.Centimeters);
+                    var finalThickness = clash.Thickness + clearance;
+                    var thicknessParam = instance.LookupParameter("FUR.esp-laje");
+                    thicknessParam?.Set(finalThickness);
 
-                    var instance = _doc.Create.NewFamilyInstance(insertionPoint, familySymbol, StructuralType.NonStructural);
-                    var (thickness, diameter) = clash.Value;
-
-                    if (thickness > 0)
-                    {
-                        var clearance = UnitUtils.ConvertToInternalUnits(10, UnitTypeId.Centimeters);
-                        var finalThickness = thickness + clearance;
-                        var thicknessParam = instance.LookupParameter("FUR.esp-laje");
-                        thicknessParam?.Set(finalThickness);
-                    }
-
-                    if (diameter > 0)
-                    {
-                        var clearance = UnitUtils.ConvertToInternalUnits(1, UnitTypeId.Centimeters);
-                        var finalDiameter = diameter + clearance;
-                        var dim1Param = instance.LookupParameter("TH-FUR-DIM1");
-                        dim1Param?.Set(finalDiameter);
-                        var dim2Param = instance.LookupParameter("TH-FUR-DIM2");
-                        dim2Param?.Set(finalDiameter);
-                    }
-                    createdCount++;
+                    var floorIdParam = instance.LookupParameter("FUR.ESTRUTURA.ID");
+                    floorIdParam.Set(clash.GetFloor()!.Id.Value);
                 }
 
-                t.Commit();
+                if (clash.Diameter > 0)
+                {
+                    var clearance = UnitUtils.ConvertToInternalUnits(1, UnitTypeId.Centimeters);
+                    var finalDiameter = clash.Diameter + clearance;
+                    var dim1Param = instance.LookupParameter("TH-FUR-DIM1");
+                    dim1Param?.Set(finalDiameter);
+                    var dim2Param = instance.LookupParameter("TH-FUR-DIM2");
+                    dim2Param?.Set(finalDiameter);
+
+                    var curveIdParam = instance.LookupParameter("FUR.TUBO.ID");
+                    curveIdParam.Set(clash.GetMepCurve()!.Id.Value);
+                }
+
+                createdCount++;
             }
-            return createdCount;
+
+            t.Commit();
         }
+
+        return createdCount;
     }
 }

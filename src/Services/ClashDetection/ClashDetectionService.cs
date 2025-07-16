@@ -44,7 +44,12 @@ namespace ClashOpenings.src.Services.ClashDetection
                             var localCenterPoint = topFace.Evaluate(centerUV);
                             var worldCenterPoint = transform1.OfPoint(localCenterPoint);
 
-                            clashResults.Add(new ClashResult(worldCenterPoint, elem1, elem2, intersection.Volume));
+                            var (thickness, diameter) = GetClashParameters(elem1, elem2);
+
+                            if (thickness > 0 || diameter > 0)
+                            {
+                                clashResults.Add(new ClashResult(worldCenterPoint, elem1, elem2, intersection.Volume, thickness, diameter));
+                            }
                         }
                     }
                     catch
@@ -56,39 +61,30 @@ namespace ClashOpenings.src.Services.ClashDetection
             return clashResults;
         }
 
-        public Dictionary<XYZ, (double thickness, double diameter)> ProcessClashResults(List<ClashResult> clashResults)
+        private (double thickness, double diameter) GetClashParameters(Element elem1, Element elem2)
         {
-            var clashInformation = new Dictionary<XYZ, (double thickness, double diameter)>();
-            foreach (var clash in clashResults)
+            double thickness = 0;
+            double diameter = 0;
+
+            var floor = elem1 as Floor ?? elem2 as Floor;
+            var mepCurve = elem1 as MEPCurve ?? elem2 as MEPCurve;
+
+            if (floor != null)
             {
-                var elem1 = clash.Element1;
-                var elem2 = clash.Element2;
-
-                double thickness = 0;
-                double diameter = 0;
-
-                var floor = elem1 as Floor ?? elem2 as Floor;
-                var mepCurve = elem1 as MEPCurve ?? elem2 as MEPCurve;
-
-                if (floor != null)
-                {
-                    var thicknessParam = floor.get_Parameter(BuiltInParameter.FLOOR_ATTR_THICKNESS_PARAM);
-                    if (thicknessParam != null && thicknessParam.HasValue)
-                        thickness = thicknessParam.AsDouble();
-                }
-
-                if (mepCurve != null)
-                {
-                    var dParam = mepCurve.get_Parameter(BuiltInParameter.RBS_PIPE_DIAMETER_PARAM) ??
-                                 mepCurve.get_Parameter(BuiltInParameter.RBS_CONDUIT_DIAMETER_PARAM);
-                    if (dParam != null && dParam.HasValue)
-                        diameter = dParam.AsDouble();
-                }
-
-                if (thickness > 0 || diameter > 0)
-                    clashInformation[clash.CenterPoint] = (thickness, diameter);
+                var thicknessParam = floor.get_Parameter(BuiltInParameter.FLOOR_ATTR_THICKNESS_PARAM);
+                if (thicknessParam != null && thicknessParam.HasValue)
+                    thickness = thicknessParam.AsDouble();
             }
-            return clashInformation;
+
+            if (mepCurve != null)
+            {
+                var dParam = mepCurve.get_Parameter(BuiltInParameter.RBS_PIPE_DIAMETER_PARAM) ??
+                             mepCurve.get_Parameter(BuiltInParameter.RBS_CONDUIT_DIAMETER_PARAM);
+                if (dParam != null && dParam.HasValue)
+                    diameter = dParam.AsDouble();
+            }
+
+            return (thickness, diameter);
         }
 
         private Solid GetSolidFromElement(Element element)

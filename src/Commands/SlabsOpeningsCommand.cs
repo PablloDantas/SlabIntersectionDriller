@@ -71,10 +71,8 @@ public class SlabsOpeningsCommand : IExternalCommand
         var clashDetector = new ClashDetectionService();
         var clashResults = clashDetector.FindClashes((selectedLinkInstance1, elements1), (selectedLinkInstance2, elements2));
 
-        var clashInfo = clashDetector.ProcessClashResults(clashResults);
-
         var familyPlacer = new FamilyPlacementService(doc);
-        var openingsCreated = familyPlacer.CreateOpenings(clashInfo);
+        var openingsCreated = familyPlacer.CreateOpenings(clashResults);
 
         var summary = new StringBuilder();
         summary.AppendLine("Detecção de Conflitos Concluída");

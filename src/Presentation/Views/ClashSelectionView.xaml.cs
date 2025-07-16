@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using System.Windows;
-using Autodesk.Revit.UI;
-using ClashOpenings.src.Presentation.ViewModels;
+﻿using Autodesk.Revit.UI;
 
 namespace ClashOpenings.src.Presentation.Views;
 
@@ -17,7 +14,9 @@ public partial class ClashSelectionView : IDockablePaneProvider
         data.FrameworkElement = this;
         data.InitialState = new DockablePaneState
         {
-            DockPosition = DockPosition.Right
+            DockPosition = DockPosition.Right,
+            MinimumWidth = 500,
+            MinimumHeight = 600
         };
         data.VisibleByDefault = false;
     }

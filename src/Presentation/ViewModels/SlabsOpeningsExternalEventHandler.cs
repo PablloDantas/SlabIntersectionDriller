@@ -41,10 +41,8 @@ public class SlabsOpeningsExternalEventHandler : IExternalEventHandler
             var clashDetector = new ClashDetectionService();
             var clashResults = clashDetector.FindClashes((_linkInstance1, elements1), (_linkInstance2, elements2));
 
-            var clashInfo = clashDetector.ProcessClashResults(clashResults);
-
             var familyPlacer = new FamilyPlacementService(doc);
-            var openingsCreated = familyPlacer.CreateOpenings(clashInfo);
+            var openingsCreated = familyPlacer.CreateOpenings(clashResults);
 
             var summary = new StringBuilder();
             summary.AppendLine($"Clash detection completed. Found {clashResults.Count} clashes.");
