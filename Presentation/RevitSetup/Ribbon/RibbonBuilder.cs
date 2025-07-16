@@ -2,7 +2,7 @@ using System.Reflection;
 using Autodesk.Revit.UI;
 using ClashOpenings.Presentation.Helpers;
 
-namespace ClashOpenings.Presentation.RevitExternalAppSetup.Ribbon;
+namespace ClashOpenings.Presentation.RevitSetup.Ribbon;
 
 /// <summary>
 ///     Responsável por construir a aba, painel e botões da aplicação na interface do Revit.

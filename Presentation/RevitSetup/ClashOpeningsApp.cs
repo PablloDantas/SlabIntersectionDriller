@@ -1,11 +1,11 @@
 using Autodesk.Revit.UI;
-using ClashOpenings.Presentation.RevitExternalAppSetup.Ribbon;
+using ClashOpenings.Presentation.RevitSetup.Ribbon;
 using ClashOpenings.Presentation.Vendors.Ricaun;
 using ClashOpenings.Presentation.Views;
 
-namespace ClashOpenings.Presentation.RevitExternalAppSetup;
+namespace ClashOpenings.Presentation.RevitSetup;
 
-public class App : IExternalApplication
+public class ClashOpeningsApp : IExternalApplication
 {
     public static DockablePaneCreatorService? DockablePaneCreatorService { get; private set; }
     public static ClashSelectionDockablePane? SlabsOpeningsPane { get; private set; }
@@ -16,22 +16,17 @@ public class App : IExternalApplication
         DockablePaneCreatorService = new DockablePaneCreatorService(application);
         DockablePaneCreatorService.Initialize();
 
+        SlabsOpeningsGuid = Guid.NewGuid();
+        SlabsOpeningsPane = new ClashSelectionDockablePane();
 
         application.ControlledApplication.ApplicationInitialized += (_, _) =>
         {
-            var slabOpeningsGuid = Guid.NewGuid();
-            SlabsOpeningsGuid = slabOpeningsGuid;
-
-            var slabOpeningsPane = new ClashSelectionDockablePane();
-            SlabsOpeningsPane = slabOpeningsPane;
-
             DockablePaneCreatorService.Register(
-                slabOpeningsGuid,
+                SlabsOpeningsGuid,
                 "Slabs Openings",
                 SlabsOpeningsPane);
         };
 
-        // Cria a interface da ribbon
         var ribbonBuilder = new RibbonBuilder(application);
         ribbonBuilder.BuildRibbon();
 

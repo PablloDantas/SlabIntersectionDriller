@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Commands/RegisterClashSelectionPaneCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Commands/RegisterClashSelectionPaneCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Commands/RegisterClashSelectionPaneCommand.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/App.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/App.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionDockablePane.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Views/ClashSelectionDockablePane.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Resources/Manifest/ClashOpenings.addin" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Resources/Manifest/ClashOpenings.addin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/App.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/Entities/Data/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Entities/Data/ButtonData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752605428136</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling.">
+      <option name="closed" value="true" />
+      <created>1752640166314</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752640166314</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +200,8 @@
     <MESSAGE value="Refactor `SlabsOpeningsCommand` to simplify logic, introduce `ClashDetectionCommand` for comprehensive clash handling, and update workspace configuration files." />
     <MESSAGE value="feature: 1° Version with UI and commands works. Implement `ClashSelectionView` with corresponding ViewModel and integrate it into `SlabsOpeningsCommand` for enhanced clash selection and detection workflow. Update project settings and dependencies." />
     <MESSAGE value="Remove `ClashDetectionCommand` class and related logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove `ClashDetectionCommand` class and related logic." />
+    <MESSAGE value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

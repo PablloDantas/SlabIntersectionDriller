@@ -3,7 +3,7 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
-using ClashOpenings.Presentation.RevitExternalAppSetup;
+using ClashOpenings.Presentation.RevitSetup;
 using ClashOpenings.Presentation.Vendors.Ricaun;
 using ClashOpenings.Presentation.ViewModels;
 
@@ -24,9 +24,9 @@ public class SlabsOpeningsCommand : IExternalCommand
         var uiDoc = uiApp.ActiveUIDocument;
 
         var viewModel = new ClashSelectionViewModel(uiDoc);
-        App.SlabsOpeningsPane?.SetViewModel(viewModel);
+        ClashOpeningsApp.SlabsOpeningsPane?.SetViewModel(viewModel);
 
-        var dockablePane = App.DockablePaneCreatorService?.Get(App.SlabsOpeningsGuid);
+        var dockablePane = ClashOpeningsApp.DockablePaneCreatorService?.Get(ClashOpeningsApp.SlabsOpeningsGuid);
 
         if (dockablePane != null && dockablePane.TryIsShow())
             dockablePane.TryHide();
