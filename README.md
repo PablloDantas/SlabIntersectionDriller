@@ -149,3 +149,10 @@ capacitam o plugin ClashOpenings com uma base arquitetural sólida. Esta estrutu
 manutenibilidade do código, mas também facilita o desenvolvimento e a evolução contínua das funcionalidades do plugin.
 
 ![MainFlow.svg](Resources/Images/MainFlow.svg)
+
+## Créditos
+
+Muito obrigado ao Ricaun por disponibilizar projetos de exemplo para se trabalhar com dockable panels, a maior parte dos 
+serviços para integração, cadastro e inicialização dos painéis do Revit foram feitas usando os recursos disponíveis nos repositórios:
+* [ricaun.Revit.UI.Dockable](https://github.com/ricaun-io/RevitAddin.Dockable.Example)
+* [RevitAddin.Dockable.Example](https://github.com/ricaun-io/RevitAddin.Dockable.Example)
