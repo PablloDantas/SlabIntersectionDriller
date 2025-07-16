@@ -3,6 +3,9 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
+using ClashOpenings.Presentation.RevitExternalAppSetup;
+using ClashOpenings.Presentation.Vendors.Ricaun;
+using ClashOpenings.Presentation.ViewModels;
 
 namespace ClashOpenings.Presentation.Commands;
 
@@ -18,38 +21,17 @@ public class SlabsOpeningsCommand : IExternalCommand
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
         var uiApp = commandData.Application;
+        var uiDoc = uiApp.ActiveUIDocument;
 
-        try
-        {
-            // Verifica se o painel já está registrado 
-            var dockablePane = uiApp.GetDockablePane(ClashSelectionDockablePaneId.Id);
-            // O painel já está registrado, então apenas mostramos
-            dockablePane.Show();
-        }
-        catch (Exception)
-        {
-            // O painel ainda não foi registrado
-            try
-            {
-                // Registramos o painel apenas uma vez
-                if (DockablePaneUtility.CurrentPane == null)
-                {
-                    var registerCommand = new RegisterClashSelectionPaneCommand();
-                    var result = registerCommand.Execute(commandData, ref message, elements);
+        var viewModel = new ClashSelectionViewModel(uiDoc);
+        App.SlabsOpeningsPane?.SetViewModel(viewModel);
 
-                    if (result != Result.Succeeded) return result;
-                }
+        var dockablePane = App.DockablePaneCreatorService?.Get(App.SlabsOpeningsGuid);
 
-                // Mostramos o painel
-                var dockPane = uiApp.GetDockablePane(ClashSelectionDockablePaneId.Id);
-                dockPane.Show();
-            }
-            catch (Exception ex)
-            {
-                message = ex.Message;
-                return Result.Failed;
-            }
-        }
+        if (dockablePane != null && dockablePane.TryIsShow())
+            dockablePane.TryHide();
+        else
+            dockablePane?.TryShow();
 
         return Result.Succeeded;
     }

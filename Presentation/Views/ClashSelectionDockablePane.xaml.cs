@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
 using Autodesk.Revit.UI;
 using ClashOpenings.Presentation.ViewModels;
 
 namespace ClashOpenings.Presentation.Views;
 
-public partial class ClashSelectionDockablePane : UserControl, IDockablePaneProvider
+public partial class ClashSelectionDockablePane : IDockablePaneProvider
 {
     // Armazenar o UIDocument atual para uso posterior
     private UIDocument _currentUiDoc;
