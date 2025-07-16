@@ -5,33 +5,55 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <LangVersion>latest</LangVersion>
+        <PlatformTarget>x64</PlatformTarget>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="RevitAPI">
-        <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="RevitAPIUI">
-        <HintPath>..\..\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
+        <Reference Include="AdWindows">
+            <HintPath>..\..\Program Files\Autodesk\Revit 2025\AdWindows.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="RevitAPI">
+            <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="RevitAPIUI">
+            <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Core\Application\Features\" />
-      <Folder Include="Core\Application\Interfaces\" />
-      <Folder Include="Core\Application\Services\" />
-      <Folder Include="Core\Domain\Entities\" />
-      <Folder Include="Core\Domain\Enums\" />
-      <Folder Include="Core\Domain\ValueObjects\" />
-      <Folder Include="Infrastructure\RevitAPI\" />
-      <Folder Include="Presentation\Helpers\" />
-      <Folder Include="Tests\" />   
+        <None Include="obj\global.json"/>
+        <None Remove="Projects\**"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="obj\global.json" />
+        <Page Update="src\Presentation\Views\ClashSelectionView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Remove="Projects\**"/>
+        <Page Update="Presentation\Views\ClashSelectionView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Projects\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Projects\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include=".github\workflows\docs.yml"/>
+        <Content Include="Projects\Arquivo do Projeto de Furação.rvt"/>
+        <Content Include="Projects\Arquivo do Projeto de Tubos.rvt"/>
+        <Content Include="Projects\Arquivo do Projeto Estrutural.rvt"/>
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -44,16 +66,16 @@
         <!-- Copy target file to ClashOpenings directory -->
         <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\&quot;"/>
 
-        <!-- Copy *.addin files from Presentation/Resources/Manifest to Addins directory -->
-        <Exec Command="copy /Y &quot;$(ProjectDir)Presentation\Resources\Manifest\*.addin&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\&quot;"/>
+        <!-- Copy *.addin files from src/Presentation/Resources/Manifest to Addins directory -->
+        <Exec Command="copy /Y &quot;$(ProjectDir)Resources\Manifest\*.addin&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\&quot;"/>
 
         <!-- Display warning if no .addin file was found in Manifest folder -->
-        <Exec Command="if not exist &quot;$(ProjectDir)Presentation\Resources\Manifest\*.addin&quot; echo WARNING: No .addin file found in project"/>
+        <Exec Command="if not exist &quot;$(ProjectDir)Resources\Manifest\*.addin&quot; echo WARNING: No .addin file found in project"/>
 
         <!-- Check if Icons folder exists and contains files before creating target directory and copying -->
-        <Exec Command="if exist &quot;$(ProjectDir)Presentation\Resources\Icons\*.*&quot; (
+        <Exec Command="if exist &quot;$(ProjectDir)Resources\Icons\*.*&quot; (
         if not exist &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot; mkdir &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
-        xcopy /Y /E /I &quot;$(ProjectDir)Presentation\Resources\Icons&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
+        xcopy /Y /E /I &quot;$(ProjectDir)Resources\Icons&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
     ) else (
         echo WARNING: Icons folder does not exist or is empty in project
     )"/>

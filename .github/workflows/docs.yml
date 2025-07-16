@@ -1,0 +1,33 @@
+﻿name: Publicar Documentação no GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Dispara o workflow em cada push para a branch 'main'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permissão necessária para escrever no repositório (para pages)
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Instalar DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Restaurar dependências NuGet do Projeto C# (se necessário)
+        run: dotnet restore src/SlabsOpenings.sln # Substitua pelo caminho da sua solução se for diferente
+
+      - name: Build do Projeto DocFX
+        run: docfx build
+
+      - name: Publicar no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # Uma Action popular para publicar no GH Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site # A pasta onde o DocFX gera o site
+          publish_branch: gh-pages # A branch onde o GitHub Pages vai buscar os arquivos (será criada se não existir)
+          cname: # Opcional: seu domínio personalizado, se tiver

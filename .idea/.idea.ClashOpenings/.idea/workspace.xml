@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Images/DockPanelFinalState.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Images/DockPanelInitial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Images/MainFlow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Images/Openings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Images/OpeningsZoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Images/PluginButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/slabsopenings" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PablloDantas&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/dockpane" />
+                    <option name="lastUsedInstant" value="1752635545" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/slabsopenings" />
+                    <option name="lastUsedInstant" value="1752635544" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PablloDantas/SlabIntersectionDriller.git&quot;,
+    &quot;accountId&quot;: &quot;4d726ef7-e019-4c17-8cba-447ce68f425f&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/AppButtons.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/src/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Dev/ClashOpenings/src/Services/ClashDetective.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/23/bfd6a9a0/ItemFactoryBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/36/d6ccbddb/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/6e/84b37aa7/RevitLinkInstance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/a8/691ce4ee/Element.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/ee/b19d319a/BuiltInCategory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/11/05328caf/UIApplication.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/79/b0fa4cd0/DockablePane.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/aa/e99ba385/_003CModule_003E.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/b5/6c29f188/DockablePaneId.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/e191d0e383904777a95c191155a7f09913920/71/359ddb50/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/487764c4dc815ef1e9090514895a23ed9e2d8eda1f7fd6958ac0fb25e8437/Guid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/991eb139ea76b3c23fc28f255d11784f6936b9dd4eec5b584dc531e31e2b2b1/Queue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/c98c4c26354b89d76ffbddb774441bcc9c7ed3559b98dbd6fe39a56fc7eb18/ObservableCollection.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2zplzEmczDl8a9smyO95373RO5u" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Executable.Debug - Revit 2025.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Executable.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/dockpane&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="" />
+      <created>1752436156030</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752436156030</updated>
+      <workItem from="1752436157616" duration="1734000" />
+      <workItem from="1752441007194" duration="3444000" />
+      <workItem from="1752454536848" duration="2845000" />
+      <workItem from="1752457858205" duration="59000" />
+      <workItem from="1752486483918" duration="4671000" />
+      <workItem from="1752498343006" duration="4762000" />
+      <workItem from="1752504179520" duration="378000" />
+      <workItem from="1752504783946" duration="3884000" />
+      <workItem from="1752574720587" duration="1776000" />
+      <workItem from="1752577373523" duration="22501000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files.">
+      <option name="closed" value="true" />
+      <created>1752457905404</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752457905404</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor `SlabsOpeningsCommand` to simplify logic, introduce `ClashDetectionCommand` for comprehensive clash handling, and update workspace configuration files.">
+      <option name="closed" value="true" />
+      <created>1752491727431</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752491727431</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feature: 1° Version with UI and commands works. Implement `ClashSelectionView` with corresponding ViewModel and integrate it into `SlabsOpeningsCommand` for enhanced clash selection and detection workflow. Update project settings and dependencies.">
+      <option name="closed" value="true" />
+      <created>1752605339103</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752605339103</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove `ClashDetectionCommand` class and related logic.">
+      <option name="closed" value="true" />
+      <created>1752605428136</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752605428136</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling.">
+      <option name="closed" value="true" />
+      <created>1752640166314</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752640166314</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic.">
+      <option name="closed" value="true" />
+      <created>1752640887651</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752640887651</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure.">
+      <option name="closed" value="true" />
+      <created>1752642352063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752642352063</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor: Rename classes, view models, and handlers from &quot;ClashSelection&quot; to &quot;SlabsOpenings&quot; for consistency. Introduce `ClassCollectors` for Revit-related data retrieval and update nullable references across handlers and view models.">
+      <option name="closed" value="true" />
+      <created>1752645038069</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752645038069</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Introduce comprehensive clash detection and opening creation workflow.&#10;&#10;- Added `ClashDetectionService` for clash analysis between linked models.&#10;- Added `FamilyPlacementService` for automated slab opening creation based on clash results.&#10;- Implemented `RevitElementCollector` and `ViewGeometryService` for element retrieval and search volume calculation.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to utilize new services.&#10;- Removed obsolete `ClassCollectors` to streamline functionality.">
+      <option name="closed" value="true" />
+      <created>1752646501086</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752646501086</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: Enhance clash detection and opening creation process&#10;&#10;- Refactored `ClashDetectionService` to include clash parameter extraction (`thickness` and `diameter`) directly in clash results.&#10;- Simplified `FamilyPlacementService` to work with enriched `ClashResult` objects, reducing dependency on pre-processed data.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to use revised workflows.&#10;- Modernized `ClashSelectionView` with improved styles, layout, and responsiveness.&#10;- Adjusted dockable pane behavior to include new minimum dimensions.">
+      <option name="closed" value="true" />
+      <created>1752649828160</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752649828160</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: Overhaul clash detection workflow and enhance consistency across services.&#10;&#10;- Renamed several classes and services (`ClashDetectionService` to `ClashDetective`, `FamilyPlacementService` to `FamilyCreator`, `RevitElementCollector` to `ElementCollector`) for better clarity and naming consistency.&#10;- Updated `SlabsOpeningsExternalEventHandler` to align with revised clash detection and family creation logic.&#10;- Introduced `LinkElementData` for grouping link instances with their elements, simplifying clash detection process.&#10;- Improved error handling and localized user messages in `SlabsOpeningsExternalEventHandler`.&#10;- Modernized UI text in `ClashSelectionView` for better user interpretation.">
+      <option name="closed" value="true" />
+      <created>1752652361574</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752652361574</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor: Extract methods for improved readability and error handling in `ClashDetective`&#10;&#10;- Introduced `ProcessElementPair` method to encapsulate processing logic for element pairs.&#10;- Added `AddClashResultIfValid` method to handle `ClashResult` creation based on clash parameters.&#10;- Improved error handling with explicit logging for debugging.&#10;- Replaced magic numbers with named constants for better code clarity (`MinVolumeTolerance`, `MinClashParameterValue`).">
+      <option name="closed" value="true" />
+      <created>1752652637427</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752652637427</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery.">
+      <option name="closed" value="true" />
+      <created>1752653289066</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752653289066</updated>
+    </task>
+    <task id="LOCAL-00014" summary="refactor: Add XML documentation and improve modularity across services and handlers&#10;&#10;- Introduced XML documentation for better code clarity and maintainability in handlers, services, commands, and models.&#10;- Extracted multiple methods in `SlabsOpeningsExternalEventHandler` for better readability and modular processing.&#10;- Enhanced error handling and improved user feedback across commands and event handlers.&#10;- Added the new `RevitFamilyConstants` class to centralize Revit family and parameter constants, improving reusability.">
+      <option name="closed" value="true" />
+      <created>1752655684093</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752655684093</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: Add new minified architecture and diagram scripts for public site&#10;&#10;- Introduced `architecture-I3QFYML2-2T2ZUHXO.min.js` for architecture module exports.&#10;- Added `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` to support diagram functionalities.&#10;- Included source maps for both scripts to aid debugging.">
+      <option name="closed" value="true" />
+      <created>1752658264244</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752658264244</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: Add new Revit project files for drilling, piping, and structural designs&#10;&#10;- Introduced `Arquivo do Projeto de Furação.rvt` for drilling designs.&#10;- Added `Arquivo do Projeto de Tubos.rvt` for piping Projects.&#10;- Included `Arquivo do Projeto Estrutural.rvt` for structural engineering.">
+      <option name="closed" value="true" />
+      <created>1752658358605</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752658358605</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Add new Revit project files for drilling, piping, and structural designs">
+      <option name="closed" value="true" />
+      <created>1752658409064</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752658409064</updated>
+    </task>
+    <task id="LOCAL-00018" summary="chore: Remove legacy architecture and diagram scripts from public site&#10;&#10;- Deleted `architecture-I3QFYML2-2T2ZUHXO.min.js` and `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` along with their source maps.">
+      <option name="closed" value="true" />
+      <created>1752660154869</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752660154869</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: Remove &quot;src&quot; namespace references and update project structure&#10;&#10;- Renamed namespaces and class paths to eliminate &quot;src&quot; prefix for consistency and clarity.&#10;- Adjusted solution and project files to reflect updated folder structure.&#10;- Updated resource paths in build scripts to align with the new structure.">
+      <option name="closed" value="true" />
+      <created>1752660808744</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752660808744</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add RevitBoundingBoxAdapter, update BoundingBox with factory method, implement clash detection command logic, and update project settings files." />
+    <MESSAGE value="Refactor `SlabsOpeningsCommand` to simplify logic, introduce `ClashDetectionCommand` for comprehensive clash handling, and update workspace configuration files." />
+    <MESSAGE value="feature: 1° Version with UI and commands works. Implement `ClashSelectionView` with corresponding ViewModel and integrate it into `SlabsOpeningsCommand` for enhanced clash selection and detection workflow. Update project settings and dependencies." />
+    <MESSAGE value="Remove `ClashDetectionCommand` class and related logic." />
+    <MESSAGE value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
+    <MESSAGE value="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic." />
+    <MESSAGE value="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure." />
+    <MESSAGE value="refactor: Rename classes, view models, and handlers from &quot;ClashSelection&quot; to &quot;SlabsOpenings&quot; for consistency. Introduce `ClassCollectors` for Revit-related data retrieval and update nullable references across handlers and view models." />
+    <MESSAGE value="feat: Introduce comprehensive clash detection and opening creation workflow.&#10;&#10;- Added `ClashDetectionService` for clash analysis between linked models.&#10;- Added `FamilyPlacementService` for automated slab opening creation based on clash results.&#10;- Implemented `RevitElementCollector` and `ViewGeometryService` for element retrieval and search volume calculation.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to utilize new services.&#10;- Removed obsolete `ClassCollectors` to streamline functionality." />
+    <MESSAGE value="feat: Enhance clash detection and opening creation process&#10;&#10;- Refactored `ClashDetectionService` to include clash parameter extraction (`thickness` and `diameter`) directly in clash results.&#10;- Simplified `FamilyPlacementService` to work with enriched `ClashResult` objects, reducing dependency on pre-processed data.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to use revised workflows.&#10;- Modernized `ClashSelectionView` with improved styles, layout, and responsiveness.&#10;- Adjusted dockable pane behavior to include new minimum dimensions." />
+    <MESSAGE value="refactor: Overhaul clash detection workflow and enhance consistency across services.&#10;&#10;- Renamed several classes and services (`ClashDetectionService` to `ClashDetective`, `FamilyPlacementService` to `FamilyCreator`, `RevitElementCollector` to `ElementCollector`) for better clarity and naming consistency.&#10;- Updated `SlabsOpeningsExternalEventHandler` to align with revised clash detection and family creation logic.&#10;- Introduced `LinkElementData` for grouping link instances with their elements, simplifying clash detection process.&#10;- Improved error handling and localized user messages in `SlabsOpeningsExternalEventHandler`.&#10;- Modernized UI text in `ClashSelectionView` for better user interpretation." />
+    <MESSAGE value="refactor: Extract methods for improved readability and error handling in `ClashDetective`&#10;&#10;- Introduced `ProcessElementPair` method to encapsulate processing logic for element pairs.&#10;- Added `AddClashResultIfValid` method to handle `ClashResult` creation based on clash parameters.&#10;- Improved error handling with explicit logging for debugging.&#10;- Replaced magic numbers with named constants for better code clarity (`MinVolumeTolerance`, `MinClashParameterValue`)." />
+    <MESSAGE value="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery." />
+    <MESSAGE value="refactor: Add XML documentation and improve modularity across services and handlers&#10;&#10;- Introduced XML documentation for better code clarity and maintainability in handlers, services, commands, and models.&#10;- Extracted multiple methods in `SlabsOpeningsExternalEventHandler` for better readability and modular processing.&#10;- Enhanced error handling and improved user feedback across commands and event handlers.&#10;- Added the new `RevitFamilyConstants` class to centralize Revit family and parameter constants, improving reusability." />
+    <MESSAGE value="feat: Add new minified architecture and diagram scripts for public site&#10;&#10;- Introduced `architecture-I3QFYML2-2T2ZUHXO.min.js` for architecture module exports.&#10;- Added `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` to support diagram functionalities.&#10;- Included source maps for both scripts to aid debugging." />
+    <MESSAGE value="feat: Add new Revit project files for drilling, piping, and structural designs&#10;&#10;- Introduced `Arquivo do Projeto de Furação.rvt` for drilling designs.&#10;- Added `Arquivo do Projeto de Tubos.rvt` for piping Projects.&#10;- Included `Arquivo do Projeto Estrutural.rvt` for structural engineering." />
+    <MESSAGE value="feat: Add new Revit project files for drilling, piping, and structural designs" />
+    <MESSAGE value="chore: Remove legacy architecture and diagram scripts from public site&#10;&#10;- Deleted `architecture-I3QFYML2-2T2ZUHXO.min.js` and `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` along with their source maps." />
+    <MESSAGE value="refactor: Remove &quot;src&quot; namespace references and update project structure&#10;&#10;- Renamed namespaces and class paths to eliminate &quot;src&quot; prefix for consistency and clarity.&#10;- Adjusted solution and project files to reflect updated folder structure.&#10;- Updated resource paths in build scripts to align with the new structure." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove &quot;src&quot; namespace references and update project structure&#10;&#10;- Renamed namespaces and class paths to eliminate &quot;src&quot; prefix for consistency and clarity.&#10;- Adjusted solution and project files to reflect updated folder structure.&#10;- Updated resource paths in build scripts to align with the new structure." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.NullReferenceException" breakIfHandledByUserCode="true" breakIfHandledByOtherCode="false" isInternal="false" displayValue="NullReferenceException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.ArgumentNullException" breakIfHandledByUserCode="true" breakIfHandledByOtherCode="false" isInternal="false" displayValue="ArgumentNullException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Commands/SlabsOpeningsCommand.cs</url>
+          <line>39</line>
+          <properties documentPath="C:\Dev\ClashOpenings\src\Commands\SlabsOpeningsCommand.cs" containingFunctionPresentation="Method 'Execute'">
+            <startOffsets>
+              <option value="1862" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1886" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

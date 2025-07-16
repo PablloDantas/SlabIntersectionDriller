@@ -1,25 +1,40 @@
-using ClashOpenings.Presentation.RevitSetup.Entities.Data;
-
 namespace ClashOpenings.Presentation.RevitSetup.Ribbon;
 
 /// <summary>
-/// Classe estática que armazena as definições para todos os botões da aplicação.
-/// Para adicionar um novo botão, basta criar uma nova instância de ButtonData aqui.
+///     Classe estática que define as propriedades e configurações para os botões da interface do usuário da aplicação.
+///     Novos botões devem ser declarados aqui utilizando a estrutura <see cref="ButtonData" />.
 /// </summary>
 public static class AppButtons
 {
-    // Defina aqui cada botão da sua aplicação
+    /// <summary>
+    ///     Define as propriedades do botão "Inserir Passagens".
+    ///     Este botão detecta conflitos entre elementos e lajes, e automatiza a inserção de furos.
+    /// </summary>
     public static readonly ButtonData SlabsOpeningsButton = new(
-        Name: "SlabsOpenings",
-        Text: "Slabs Openings",
-        CommandNamespace: "ClashOpenings.Presentation.Commands.SlabsOpeningsCommand", // Exemplo de namespace do comando
-        Tooltip: "Cria furos em lajes com base nas interseções de dutos.",
-        IconName: "SlabsOpenings.png"
+        "SlabsOpenings",
+        "Inserir Passagens",
+        "ClashOpenings.Commands.SlabsOpeningsCommand",
+        "Detecta conflitos entre elementos e lajes, e instancia famílias de furos automaticamente no local da interferência.",
+        "SlabsOpenings.png"
     );
 
-    // Uma lista para facilitar a iteração pelo RibbonBuilder
+    /// <summary>
+    ///     Uma lista que contém todos os objetos <see cref="ButtonData" /> definidos na aplicação.
+    ///     Facilita a iteração para a construção da interface do Ribbon.
+    /// </summary>
     public static readonly List<ButtonData> AllButtons = new()
     {
         SlabsOpeningsButton
+    };
+
+    /// <summary>
+    ///     Um dicionário para organizar botões em grupos específicos dentro do Ribbon.
+    ///     A chave representa o nome do grupo e o valor é uma lista de <see cref="ButtonData" /> pertencentes a esse grupo.
+    /// </summary>
+    public static readonly Dictionary<string, List<ButtonData>> ButtonGroups = new()
+    {
+        {
+            "ClashPanelControls", []
+        }
     };
 }
