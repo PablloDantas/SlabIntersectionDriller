@@ -6,223 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/docs/getting-started.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/docs/introduction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/architecture-I3QFYML2-2T2ZUHXO.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/architecture-I3QFYML2-2T2ZUHXO.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/architectureDiagram-UYN6MBPD-WBU2OYNU.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/architectureDiagram-UYN6MBPD-WBU2OYNU.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/blockDiagram-ZHA2E4KO-IZKTV5IP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/blockDiagram-ZHA2E4KO-IZKTV5IP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/bootstrap-icons-OCU552PF.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/bootstrap-icons-X6UQXWUS.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/c4Diagram-6F5ED5ID-X53KYE5F.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/c4Diagram-6F5ED5ID-X53KYE5F.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-2YMHYP32.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-2YMHYP32.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-33FU46FA.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-33FU46FA.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-3Z74ZUXG.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-3Z74ZUXG.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-54U54PUP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-54U54PUP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-5IIW54K6.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-5IIW54K6.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-6YMKSKZH.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-6YMKSKZH.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-AUO2PXKS.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-AUO2PXKS.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-BD4P4Z7J.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-BD4P4Z7J.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-BIJFJY5F.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-BIJFJY5F.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-C7DS3QYJ.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-C7DS3QYJ.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-CLIYZZ5Y.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-CLIYZZ5Y.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-CM5D5KZN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-CM5D5KZN.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-CXRPJJJE.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-CXRPJJJE.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-DTUU2GN4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-DTUU2GN4.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-EDJWACL4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-EDJWACL4.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-EKP7MBOP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-EKP7MBOP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-I4ZXTPQC.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-I4ZXTPQC.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-IJ4BRSPX.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-IJ4BRSPX.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-IQQ46AC6.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-IQQ46AC6.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-ISDTAGDN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-ISDTAGDN.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-JL3VILNY.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-JL3VILNY.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-N4YULA37.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-N4YULA37.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-N6ME3NZU.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-N6ME3NZU.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-OSRY5VT3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-OSRY5VT3.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-OZ2RCKQJ.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-OZ2RCKQJ.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-PDS7545E.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-PDS7545E.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-PYPO7LRM.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-PYPO7LRM.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-TLYS76Q7.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-TLYS76Q7.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-U3SD26FK.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-U3SD26FK.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-U4DUTLYF.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-U4DUTLYF.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-UEFJDIUO.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-UEFJDIUO.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-V55NTXQN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-V55NTXQN.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-WMZJ2DJX.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-WMZJ2DJX.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-WXIN66R4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/chunk-WXIN66R4.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/classDiagram-LNE6IOMH-VZ67B4ZP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/classDiagram-LNE6IOMH-VZ67B4ZP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/classDiagram-v2-MQ7JQ4JX-4JTAVB6L.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/classDiagram-v2-MQ7JQ4JX-4JTAVB6L.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/dagre-4EVJKHTY-MHPLGZHX.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/dagre-4EVJKHTY-MHPLGZHX.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/diagram-QW4FP2JN-UOF7FAFC.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/diagram-QW4FP2JN-UOF7FAFC.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/docfx.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/docfx.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/docfx.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/docfx.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/erDiagram-6RL3IURR-PEYW6AVI.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/erDiagram-6RL3IURR-PEYW6AVI.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/es-4I4X6RME.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/es-4I4X6RME.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/flowDiagram-7ASYPVHJ-DABBKNEC.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/flowDiagram-7ASYPVHJ-DABBKNEC.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/ganttDiagram-NTVNEXSI-JVQ2N4MZ.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/ganttDiagram-NTVNEXSI-JVQ2N4MZ.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/gitGraph-YCYPL57B-3XOJ53I6.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/gitGraph-YCYPL57B-3XOJ53I6.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/gitGraphDiagram-NRZ2UAAF-WVTRWY3E.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/gitGraphDiagram-NRZ2UAAF-WVTRWY3E.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/info-46DW6VJ7-RDUIJSMX.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/info-46DW6VJ7-RDUIJSMX.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/infoDiagram-A4XQUW5V-SKLVFWJI.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/infoDiagram-A4XQUW5V-SKLVFWJI.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/journeyDiagram-G5WM74LC-AHZ7GKR5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/journeyDiagram-G5WM74LC-AHZ7GKR5.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/kanban-definition-QRCXZQQD-MKSHYOCX.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/kanban-definition-QRCXZQQD-MKSHYOCX.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/katex-ROPKEHCO.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/katex-ROPKEHCO.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ar-A6ZT2INA.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ar-A6ZT2INA.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.da-WWM276CR.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.da-WWM276CR.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.de-XXPRKDAY.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.de-XXPRKDAY.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.du-NO4L2LL3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.du-NO4L2LL3.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.el-5ZSSJVMA.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.el-5ZSSJVMA.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.es-ZH6Q76E6.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.es-ZH6Q76E6.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.fi-S7WJSBCP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.fi-S7WJSBCP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.fr-H2QNBELV.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.fr-H2QNBELV.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.he-TTLAK4MN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.he-TTLAK4MN.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.hi-PWWMAGLU.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.hi-PWWMAGLU.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.hu-DLG2DSVM.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.hu-DLG2DSVM.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.hy-FFQJAR7M.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.hy-FFQJAR7M.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.it-VQNLJLPR.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.it-VQNLJLPR.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ja-J6QHZSR2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ja-J6QHZSR2.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.jp-M45D3XJE.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.jp-M45D3XJE.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.kn-ASLXFRTC.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.kn-ASLXFRTC.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ko-RHF2BDE4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ko-RHF2BDE4.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.nl-2BITG354.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.nl-2BITG354.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.no-WPLSHWFO.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.no-WPLSHWFO.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.pt-V2XEBELC.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.pt-V2XEBELC.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ro-O76266FJ.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ro-O76266FJ.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ru-G56UDXYH.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ru-G56UDXYH.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.sa-LD5PRAIS.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.sa-LD5PRAIS.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.sv-7VRY4UDB.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.sv-7VRY4UDB.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ta-OWB7AURB.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.ta-OWB7AURB.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.te-JGGL3BFP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.te-JGGL3BFP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.th-O4JBL3IY.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.th-O4JBL3IY.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.tr-WXUV733C.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.tr-WXUV733C.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.vi-3U4A337N.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/lunr.vi-3U4A337N.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/mermaid.core-QWHI4VJR.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/mermaid.core-QWHI4VJR.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/mindmap-definition-GWI6TPTV-XCX7U2FR.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/mindmap-definition-GWI6TPTV-XCX7U2FR.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/packet-W2GHVCYJ-ZZMTAWKW.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/packet-W2GHVCYJ-ZZMTAWKW.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/pie-BEWT4RHE-VFWRUT6J.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/pie-BEWT4RHE-VFWRUT6J.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/pieDiagram-YF2LJOPJ-ITGVNBO2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/pieDiagram-YF2LJOPJ-ITGVNBO2.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/quadrantDiagram-OS5C2QUG-BN35C5UH.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/quadrantDiagram-OS5C2QUG-BN35C5UH.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/requirementDiagram-MIRIMTAZ-CXICLXCG.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/requirementDiagram-MIRIMTAZ-CXICLXCG.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/sankeyDiagram-Y46BX6SQ-LTJNBPUP.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/sankeyDiagram-Y46BX6SQ-LTJNBPUP.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/search-worker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/search-worker.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/sequenceDiagram-G6AWOVSC-UJVWCU2P.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/sequenceDiagram-G6AWOVSC-UJVWCU2P.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/stateDiagram-MAYHULR4-UPNPJ5ZA.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/stateDiagram-MAYHULR4-UPNPJ5ZA.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/stateDiagram-v2-4JROLMXI-COTI64PW.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/stateDiagram-v2-4JROLMXI-COTI64PW.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/tex-svg-full-SL33OL2J.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/tex-svg-full-SL33OL2J.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/timeline-definition-U7ZMHBDA-I7GF7M6N.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/timeline-definition-U7ZMHBDA-I7GF7M6N.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/xychartDiagram-6QU3TZC5-MQVPM64I.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/public/xychartDiagram-6QU3TZC5-MQVPM64I.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/toc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/toc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/xrefmap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docfx.json" beforeDir="false" afterPath="$PROJECT_DIR$/docfx.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/getting-started.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/introduction.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/toc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/Arquivo do Projeto Estrutural.rvt" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/Arquivo do Projeto Estrutural.rvt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/Arquivo do Projeto de Furação.rvt" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/Arquivo do Projeto de Furação.rvt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/Arquivo do Projeto de Tubos.rvt" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/Arquivo do Projeto de Tubos.rvt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/ImageHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ClashResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ClashResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/LinkElementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/LinkElementData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/RevitFamilyConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RevitFamilyConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/ButtonData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Icons/SlabsOpenings.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Icons/SlabsOpenings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/Manifest/ClashOpenings.addin" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Manifest/ClashOpenings.addin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ClashDetective.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClashDetective.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ElementCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ElementCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FamilyCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/FamilyCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ViewGeometryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ViewGeometryService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -513,7 +326,7 @@
       <option name="project" value="LOCAL" />
       <updated>1752658264244</updated>
     </task>
-    <task id="LOCAL-00016" summary="feat: Add new Revit project files for drilling, piping, and structural designs&#10;&#10;- Introduced `Arquivo do Projeto de Furação.rvt` for drilling designs.&#10;- Added `Arquivo do Projeto de Tubos.rvt` for piping projects.&#10;- Included `Arquivo do Projeto Estrutural.rvt` for structural engineering.">
+    <task id="LOCAL-00016" summary="feat: Add new Revit project files for drilling, piping, and structural designs&#10;&#10;- Introduced `Arquivo do Projeto de Furação.rvt` for drilling designs.&#10;- Added `Arquivo do Projeto de Tubos.rvt` for piping Projects.&#10;- Included `Arquivo do Projeto Estrutural.rvt` for structural engineering.">
       <option name="closed" value="true" />
       <created>1752658358605</created>
       <option name="number" value="00016" />
@@ -529,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752658409064</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="chore: Remove legacy architecture and diagram scripts from public site&#10;&#10;- Deleted `architecture-I3QFYML2-2T2ZUHXO.min.js` and `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` along with their source maps.">
+      <option name="closed" value="true" />
+      <created>1752660154869</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752660154869</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,9 +375,10 @@
     <MESSAGE value="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery." />
     <MESSAGE value="refactor: Add XML documentation and improve modularity across services and handlers&#10;&#10;- Introduced XML documentation for better code clarity and maintainability in handlers, services, commands, and models.&#10;- Extracted multiple methods in `SlabsOpeningsExternalEventHandler` for better readability and modular processing.&#10;- Enhanced error handling and improved user feedback across commands and event handlers.&#10;- Added the new `RevitFamilyConstants` class to centralize Revit family and parameter constants, improving reusability." />
     <MESSAGE value="feat: Add new minified architecture and diagram scripts for public site&#10;&#10;- Introduced `architecture-I3QFYML2-2T2ZUHXO.min.js` for architecture module exports.&#10;- Added `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` to support diagram functionalities.&#10;- Included source maps for both scripts to aid debugging." />
-    <MESSAGE value="feat: Add new Revit project files for drilling, piping, and structural designs&#10;&#10;- Introduced `Arquivo do Projeto de Furação.rvt` for drilling designs.&#10;- Added `Arquivo do Projeto de Tubos.rvt` for piping projects.&#10;- Included `Arquivo do Projeto Estrutural.rvt` for structural engineering." />
+    <MESSAGE value="feat: Add new Revit project files for drilling, piping, and structural designs&#10;&#10;- Introduced `Arquivo do Projeto de Furação.rvt` for drilling designs.&#10;- Added `Arquivo do Projeto de Tubos.rvt` for piping Projects.&#10;- Included `Arquivo do Projeto Estrutural.rvt` for structural engineering." />
     <MESSAGE value="feat: Add new Revit project files for drilling, piping, and structural designs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add new Revit project files for drilling, piping, and structural designs" />
+    <MESSAGE value="chore: Remove legacy architecture and diagram scripts from public site&#10;&#10;- Deleted `architecture-I3QFYML2-2T2ZUHXO.min.js` and `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` along with their source maps." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Remove legacy architecture and diagram scripts from public site&#10;&#10;- Deleted `architecture-I3QFYML2-2T2ZUHXO.min.js` and `architectureDiagram-UYN6MBPD-WBU2OYNU.min.js` along with their source maps." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -585,6 +407,19 @@
           </properties>
           <option name="timeStamp" value="5" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Commands/SlabsOpeningsCommand.cs</url>
+          <line>39</line>
+          <properties documentPath="C:\Dev\ClashOpenings\src\Commands\SlabsOpeningsCommand.cs" containingFunctionPresentation="Method 'Execute'">
+            <startOffsets>
+              <option value="1862" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1886" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
