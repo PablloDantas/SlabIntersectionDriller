@@ -25,17 +25,29 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Core\Application\Services\"/>
-        <Folder Include="Presentation\Helpers\"/>
-        <Folder Include="Tests\"/>
+        <Folder Include="src\Helpers\"/>
+        <Folder Include="src\Presentation\"/>
+        <Folder Include="tests\"/>
     </ItemGroup>
 
     <ItemGroup>
         <None Include="obj\global.json"/>
+        <None Remove="Projects\**"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BepuPhysics" Version="2.4.0"/>
+        <Page Update="src\Presentation\Views\ClashSelectionView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Remove="Projects\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Projects\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Projects\**"/>
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -48,16 +60,16 @@
         <!-- Copy target file to ClashOpenings directory -->
         <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\&quot;"/>
 
-        <!-- Copy *.addin files from Presentation/Resources/Manifest to Addins directory -->
-        <Exec Command="copy /Y &quot;$(ProjectDir)Presentation\Resources\Manifest\*.addin&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\&quot;"/>
+        <!-- Copy *.addin files from src/Presentation/Resources/Manifest to Addins directory -->
+        <Exec Command="copy /Y &quot;$(ProjectDir)src\Resources\Manifest\*.addin&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\&quot;"/>
 
         <!-- Display warning if no .addin file was found in Manifest folder -->
-        <Exec Command="if not exist &quot;$(ProjectDir)Presentation\Resources\Manifest\*.addin&quot; echo WARNING: No .addin file found in project"/>
+        <Exec Command="if not exist &quot;$(ProjectDir)src\Resources\Manifest\*.addin&quot; echo WARNING: No .addin file found in project"/>
 
         <!-- Check if Icons folder exists and contains files before creating target directory and copying -->
-        <Exec Command="if exist &quot;$(ProjectDir)Presentation\Resources\Icons\*.*&quot; (
+        <Exec Command="if exist &quot;$(ProjectDir)src\Resources\Icons\*.*&quot; (
         if not exist &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot; mkdir &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
-        xcopy /Y /E /I &quot;$(ProjectDir)Presentation\Resources\Icons&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
+        xcopy /Y /E /I &quot;$(ProjectDir)src\Resources\Icons&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2025\ClashOpenings\Resources\Icons&quot;
     ) else (
         echo WARNING: Icons folder does not exist or is empty in project
     )"/>

@@ -6,13 +6,60 @@
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Commands/RegisterClashSelectionPaneCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Resources/Manifest/ClashOpenings.addin" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Resources/Manifest/ClashOpenings.addin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/App.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/Entities/Data/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Entities/Data/ButtonData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/RevitExternalAppSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Features/ClashDetection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Features/CreateOpenings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IBuildingComponentFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IExternalAppRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IIntersectionService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Application/Interfaces/IOpeningService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/BuildingProject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/BuildingComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Floor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Opening.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Elements/Pipe.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Identifiers/Id.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Entities/Intersection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/Enums/Unit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Diameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Dimension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Length.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Dimensions/Thickness.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/BoundingBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Geometry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Line.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Solid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Domain/ValueObjects/Geometries/Xyz.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/GeometryElementAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitBoundingBoxAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitFloorAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitIdAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitPipeAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/Adapters/RevitXyzAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/GeometrySetup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitBuildingComponentFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitOpeningCreation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/RevitAPI/RevitRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Handlers/ClashDetectionExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/ClashDetectionExternalEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Helpers/ImageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Resources/Icons/SlabsOpenings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/Icons/SlabsOpenings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Resources/Manifest/ClashOpenings.addin" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/Manifest/ClashOpenings.addin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/ClashOpeningsApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/Entities/Data/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneCreatorService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneProviderCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/DockablePaneService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/DockablePaneService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Vendors/Ricaun/IDockablePaneDocumentProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/ViewModels/ClashSelectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/ClashSelectionViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionDockablePane.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionDockablePane.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752640166314</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic.">
+      <option name="closed" value="true" />
+      <created>1752640887651</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752640887651</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +256,8 @@
     <MESSAGE value="feature: 1° Version with UI and commands works. Implement `ClashSelectionView` with corresponding ViewModel and integrate it into `SlabsOpeningsCommand` for enhanced clash selection and detection workflow. Update project settings and dependencies." />
     <MESSAGE value="Remove `ClashDetectionCommand` class and related logic." />
     <MESSAGE value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
+    <MESSAGE value="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

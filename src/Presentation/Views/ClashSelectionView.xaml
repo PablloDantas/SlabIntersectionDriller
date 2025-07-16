@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ClashOpenings.src.Presentation.Views.ClashSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Width="800"
+             Background="WhiteSmoke">
+    <StackPanel Margin="15">
+        <Label Content="Select First Model:" />
+        <ComboBox Margin="0,0,0,10"
+                  ItemsSource="{Binding LinkInstances}"
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedLinkInstance1}" />
+
+        <Label Content="Select Second Model:" />
+        <ComboBox Margin="0,0,0,15"
+                  ItemsSource="{Binding LinkInstances}"
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedLinkInstance2}" />
+
+        <Button Content="Run Clash Detection"
+                Name="RunClashButton"
+                HorizontalAlignment="Center"
+                Padding="10,5"
+                Command="{Binding RunClashDetectionCommand}"
+                Click="RunClashButton_Click" />
+
+        <TextBlock Margin="0,10,0,0"
+                   Text="{Binding StatusMessage}"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center" />
+    </StackPanel>
+</UserControl>
