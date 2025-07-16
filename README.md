@@ -35,6 +35,7 @@ pasta padrão de plugins do Revit, tornando-o acessível na próxima vez que voc
 ### Instalador
 
 Caso prefira realizar a instalação através do executável, a versão final está disponível em:
+[ClashOpenings-Setup-0.1-win64.exe](https://github.com/PablloDantas/ClashOpenings/blob/560ce2b691ca48cce061b15c92f2b9194123c0f2/Release/ClashOpenings-Setup-0.1-win64.exe)
 
 ## Como Utilizar
 
