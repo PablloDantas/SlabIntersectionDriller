@@ -1,5 +1,6 @@
 using Autodesk.Revit.DB;
 using ClashOpenings.src.Models;
+
 // Adicionar o using para LinkElementData
 
 // Para Console.WriteLine
@@ -9,15 +10,13 @@ namespace ClashOpenings.src.Services;
 public class ClashDetective
 {
     private const double MinVolumeTolerance = 1e-9;
-    private const double MinClashParameterValue = 0; // Para espessura e diâmetro
+    private const double MinClashParameterValue = 0;
 
     public List<ClashResult> FindClashes(LinkElementData linkData1, LinkElementData linkData2)
     {
         var clashResults = new List<ClashResult>();
 
-        var transform1 = linkData1.LinkInstance.GetTotalTransform();
-        var transform2 = linkData2.LinkInstance.GetTotalTransform();
-        var transform2To1 = transform1.Inverse.Multiply(transform2);
+        var (transform1, transform2, transform2To1) = CalculateClashTransforms(linkData1, linkData2);
 
         foreach (var elem1 in linkData1.Elements)
         {
@@ -36,13 +35,22 @@ public class ClashDetective
         return clashResults;
     }
 
+    private (Transform transform1, Transform transform2, Transform transform2To1) CalculateClashTransforms(
+        LinkElementData linkData1, LinkElementData linkData2)
+    {
+        var transform1 = linkData1.LinkInstance.GetTotalTransform();
+        var transform2 = linkData2.LinkInstance.GetTotalTransform();
+        var transform2To1 = transform1.Inverse.Multiply(transform2);
+        return (transform1, transform2, transform2To1);
+    }
+
     private void ProcessElementPair(
         Element elem1, Solid solid1,
         Element elem2, Solid solid2,
-        Transform transform2to1, Transform transform1,
+        Transform transform2To1, Transform transform1,
         List<ClashResult> clashResults)
     {
-        var transformedSolid2 = SolidUtils.CreateTransformed(solid2, transform2to1);
+        var transformedSolid2 = SolidUtils.CreateTransformed(solid2, transform2To1);
 
         try
         {
@@ -54,10 +62,7 @@ public class ClashDetective
         }
         catch (Exception ex)
         {
-            // Logar a exceção para depuração, em vez de ignorá-la silenciosamente.
-            // Em um ambiente de produção, você usaria um sistema de logging apropriado.
             Console.WriteLine($"Erro ao processar par de elementos (ID: {elem1.Id}, ID: {elem2.Id}): {ex.Message}");
-            // Decisão de negócio: se um erro ocorrer, apenas ignorar este par.
         }
     }
 

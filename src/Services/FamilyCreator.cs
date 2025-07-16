@@ -5,74 +5,94 @@ using ClashOpenings.src.Models;
 
 namespace ClashOpenings.src.Services;
 
-public class FamilyCreator
+public class FamilyCreator(Document doc)
 {
-    private readonly Document _doc;
-
-    public FamilyCreator(Document doc)
-    {
-        _doc = doc;
-    }
-
     public int CreateOpenings(List<ClashResult> clashResults)
     {
-        var familySymbol = new FilteredElementCollector(_doc)
-            .OfClass(typeof(FamilySymbol))
-            .Cast<FamilySymbol>()
-            .FirstOrDefault(fs =>
-                fs.Family.Name == "FURO-QUADRADO-LAJE" && fs.Name == "SDR - Furo na laje");
+        var familySymbol = FindAndActivateOpeningFamilySymbol();
 
         if (familySymbol == null)
         {
-            TaskDialog.Show("Error", "Opening family 'FURO-QUADRADO-LAJE' with type 'SDR - Furo na laje' not found.");
+            TaskDialog.Show("Erro",
+                "Família de furação 'FURO-QUADRADO-LAJE' com tipo 'SDR - Furo na laje' não encontrada.");
             return 0;
         }
 
-        if (!familySymbol.IsActive) familySymbol.Activate();
-
         var createdCount = 0;
-        using (var t = new Transaction(_doc, "Create Slab Openings"))
+        using (var t = new Transaction(doc, "Criar Furações em Lajes"))
         {
             t.Start();
 
-            foreach (var clash in clashResults)
-            {
-                var zOffset = UnitUtils.ConvertToInternalUnits(5, UnitTypeId.Centimeters);
-                var insertionPoint = clash.CenterPoint.Add(new XYZ(0, 0, zOffset));
-
-                var instance =
-                    _doc.Create.NewFamilyInstance(insertionPoint, familySymbol, StructuralType.NonStructural);
-
-                if (clash.Thickness > 0)
-                {
-                    var clearance = UnitUtils.ConvertToInternalUnits(10, UnitTypeId.Centimeters);
-                    var finalThickness = clash.Thickness + clearance;
-                    var thicknessParam = instance.LookupParameter("FUR.esp-laje");
-                    thicknessParam?.Set(finalThickness);
-
-                    var floorIdParam = instance.LookupParameter("FUR.ESTRUTURA.ID");
-                    floorIdParam.Set(clash.GetFloor()!.Id.Value);
-                }
-
-                if (clash.Diameter > 0)
-                {
-                    var clearance = UnitUtils.ConvertToInternalUnits(1, UnitTypeId.Centimeters);
-                    var finalDiameter = clash.Diameter + clearance;
-                    var dim1Param = instance.LookupParameter("TH-FUR-DIM1");
-                    dim1Param?.Set(finalDiameter);
-                    var dim2Param = instance.LookupParameter("TH-FUR-DIM2");
-                    dim2Param?.Set(finalDiameter);
-
-                    var curveIdParam = instance.LookupParameter("FUR.TUBO.ID");
-                    curveIdParam.Set(clash.GetMepCurve()!.Id.Value);
-                }
-
-                createdCount++;
-            }
+            createdCount += clashResults.Count(clash => TryCreateSingleOpening(clash, familySymbol));
 
             t.Commit();
         }
 
         return createdCount;
+    }
+
+    private FamilySymbol? FindAndActivateOpeningFamilySymbol()
+    {
+        var familySymbol = new FilteredElementCollector(doc)
+            .OfClass(typeof(FamilySymbol))
+            .Cast<FamilySymbol>()
+            .FirstOrDefault(fs =>
+                fs.Family.Name == "FURO-QUADRADO-LAJE" && fs.Name == "SDR - Furo na laje");
+
+        if (familySymbol != null && !familySymbol.IsActive)
+        {
+            familySymbol.Activate();
+            doc.Regenerate(); // A regeneração pode ser necessária após ativar um símbolo
+        }
+
+        return familySymbol;
+    }
+
+    private bool TryCreateSingleOpening(ClashResult clash, FamilySymbol familySymbol)
+    {
+        var zOffset = UnitUtils.ConvertToInternalUnits(5, UnitTypeId.Centimeters);
+        var insertionPoint = clash.CenterPoint.Add(new XYZ(0, 0, zOffset));
+
+        var instance = doc.Create.NewFamilyInstance(insertionPoint, familySymbol, StructuralType.NonStructural);
+
+        if (instance == null) return false;
+
+        SetOpeningParameters(instance, clash);
+        return true;
+    }
+
+    private static void SetOpeningParameters(FamilyInstance instance, ClashResult clash)
+    {
+        if (clash.Thickness > 0) SetThicknessParameters(instance, clash);
+
+        if (clash.Diameter > 0) SetDiameterParameters(instance, clash);
+    }
+
+    private static void SetThicknessParameters(FamilyInstance instance, ClashResult clash)
+    {
+        var clearance = UnitUtils.ConvertToInternalUnits(10, UnitTypeId.Centimeters);
+        var finalThickness = clash.Thickness + clearance;
+
+        var thicknessParam = instance.LookupParameter("FUR.esp-laje");
+        thicknessParam?.Set(finalThickness);
+
+        var floorIdParam = instance.LookupParameter("FUR.ESTRUTURA.ID");
+
+        floorIdParam?.Set(clash.GetFloor()?.Id.Value ?? ElementId.InvalidElementId.Value);
+    }
+
+    private static void SetDiameterParameters(FamilyInstance instance, ClashResult clash)
+    {
+        var clearance = UnitUtils.ConvertToInternalUnits(1, UnitTypeId.Centimeters);
+        var finalDiameter = clash.Diameter + clearance;
+
+        var dim1Param = instance.LookupParameter("TH-FUR-DIM1");
+        dim1Param?.Set(finalDiameter);
+        var dim2Param = instance.LookupParameter("TH-FUR-DIM2");
+        dim2Param?.Set(finalDiameter);
+
+        var curveIdParam = instance.LookupParameter("FUR.TUBO.ID");
+
+        curveIdParam?.Set(clash.GetMepCurve()?.Id.Value ?? ElementId.InvalidElementId.Value);
     }
 }
