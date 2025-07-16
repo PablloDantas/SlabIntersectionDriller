@@ -23,8 +23,7 @@
                 Name="RunClashButton"
                 HorizontalAlignment="Center"
                 Padding="10,5"
-                Command="{Binding RunClashDetectionCommand}"
-                Click="RunClashButton_Click" />
+                Command="{Binding RunClashDetectionCommand}" />
 
         <TextBlock Margin="0,10,0,0"
                    Text="{Binding StatusMessage}"

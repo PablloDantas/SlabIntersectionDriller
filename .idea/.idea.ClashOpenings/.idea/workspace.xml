@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/Collectors/ClassCollectors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Handlers/ClashDetectionExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/ClashSelectionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Collectors/ClassCollectors.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752642352063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor: Rename classes, view models, and handlers from &quot;ClashSelection&quot; to &quot;SlabsOpenings&quot; for consistency. Introduce `ClassCollectors` for Revit-related data retrieval and update nullable references across handlers and view models.">
+      <option name="closed" value="true" />
+      <created>1752645038069</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752645038069</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +230,8 @@
     <MESSAGE value="refactor: Simplify clash pane management by removing redundant commands and introducing `DockablePaneCreatorService`. Update `SlabsOpeningsCommand` to utilize new service for streamlined dockable pane handling." />
     <MESSAGE value="refactor: Restructure namespaces and remove unused `RegisterClashSelectionPaneCommand`. Rename `App` to `ClashOpeningsApp` and streamline ribbon definitions to eliminate redundant button logic." />
     <MESSAGE value="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure." />
+    <MESSAGE value="refactor: Rename classes, view models, and handlers from &quot;ClashSelection&quot; to &quot;SlabsOpenings&quot; for consistency. Introduce `ClassCollectors` for Revit-related data retrieval and update nullable references across handlers and view models." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Rename classes, view models, and handlers from &quot;ClashSelection&quot; to &quot;SlabsOpenings&quot; for consistency. Introduce `ClassCollectors` for Revit-related data retrieval and update nullable references across handlers and view models." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

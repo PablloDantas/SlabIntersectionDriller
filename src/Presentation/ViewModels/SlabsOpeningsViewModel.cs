@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using ClashOpenings.src.Services.Collectors;
+using ClashOpenings.src.Services.Revit;
 
 namespace ClashOpenings.src.Presentation.ViewModels;
 
@@ -18,7 +18,7 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
     {
         var document = uiDoc.Document;
 
-        LinkInstances = new ObservableCollection<RevitLinkInstance>(ClassCollectors.AllLinkInstances(document));
+        LinkInstances = new ObservableCollection<RevitLinkInstance>(RevitElementCollector.GetAllLinkInstances(document));
 
         // Configurar o ExternalEvent
         var eventHandler = new SlabsOpeningsExternalEventHandler();

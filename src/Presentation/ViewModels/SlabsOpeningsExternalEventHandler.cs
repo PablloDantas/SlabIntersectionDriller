@@ -1,6 +1,10 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using ClashOpenings.src.Commands;
+using ClashOpenings.src.Services.ClashDetection;
+using ClashOpenings.src.Services.FamilyInstance;
+using ClashOpenings.src.Services.Revit;
+using System.Text;
 
 namespace ClashOpenings.src.Presentation.ViewModels;
 
@@ -15,20 +19,40 @@ public class SlabsOpeningsExternalEventHandler : IExternalEventHandler
         try
         {
             var uiDoc = app.ActiveUIDocument;
-            var command = new SlabsOpeningsCommand();
-            string? msg = null;
-            var elems = new ElementSet();
+            var doc = uiDoc.Document;
 
-            var result = command.ExecuteWithSelectedLinks(
-                uiDoc,
-                ref msg,
-                elems,
-                _linkInstance1,
-                _linkInstance2);
+            if (_linkInstance1 == null || _linkInstance2 == null)
+            {
+                _updateStatusCallback?.Invoke("Error: Please select two different models.");
+                return;
+            }
 
-            _updateStatusCallback?.Invoke(result == Result.Succeeded
-                ? "Clash detection completed successfully!"
-                : "Clash detection failed: " + msg);
+            var viewService = new ViewGeometryService(doc);
+            var searchVolume = viewService.GetSearchVolume();
+            if (searchVolume == null)
+            {
+                _updateStatusCallback?.Invoke("Error: Unsupported view type. Use a plan view or a 3D view with an active section box.");
+                return;
+            }
+
+            var elements1 = RevitElementCollector.GetElementsFromLink(doc, _linkInstance1, searchVolume);
+            var elements2 = RevitElementCollector.GetElementsFromLink(doc, _linkInstance2, searchVolume);
+
+            var clashDetector = new ClashDetectionService();
+            var clashResults = clashDetector.FindClashes((_linkInstance1, elements1), (_linkInstance2, elements2));
+
+            var clashInfo = clashDetector.ProcessClashResults(clashResults);
+
+            var familyPlacer = new FamilyPlacementService(doc);
+            var openingsCreated = familyPlacer.CreateOpenings(clashInfo);
+
+            var summary = new StringBuilder();
+            summary.AppendLine($"Clash detection completed. Found {clashResults.Count} clashes.");
+            if (openingsCreated > 0)
+            {
+                summary.AppendLine($"{openingsCreated} openings were created successfully.");
+            }
+            _updateStatusCallback?.Invoke(summary.ToString());
         }
         catch (Exception ex)
         {
