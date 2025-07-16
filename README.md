@@ -153,6 +153,6 @@ manutenibilidade do código, mas também facilita o desenvolvimento e a evoluç�
 ## Créditos
 
 Muito obrigado ao Ricaun por disponibilizar projetos de exemplo para se trabalhar com dockable panels, a maior parte dos 
-serviços para integração, cadastro e inicialização dos painéis do Revit foram feitas usando os recursos disponíveis nos repositórios:
+serviços para integração, cadastro e inicialização dos painéis com a API do Revit foram feitas usando os recursos disponíveis nos repositórios:
 * [ricaun.Revit.UI.Dockable](https://github.com/ricaun-io/RevitAddin.Dockable.Example)
 * [RevitAddin.Dockable.Example](https://github.com/ricaun-io/RevitAddin.Dockable.Example)
