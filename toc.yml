@@ -1,9 +1,0 @@
-- name: Visão Geral
-  href: index.md
-- name: Primeiros Passos
-  href: docs/getting-started.md
-- name: Referência da API
-  href: api/
-  homepage: api/index.md
-- name: Contribuição
-  href: articles/contributing.md
