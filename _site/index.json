@@ -1,0 +1,17 @@
+{
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Guia de Introdução | Clash Detection e Modelagem de Passagens Automáticas com Revit AP.",
+    "summary": "Guia de Introdução Este guia o ajudará a começar a usar o ClashOpenings. Instalação (Conteúdo sobre instalação do seu projeto) Uso (Conteúdo sobre como usar seu projeto)"
+  },
+  "docs/introduction.html": {
+    "href": "docs/introduction.html",
+    "title": "Introduction | Clash Detection e Modelagem de Passagens Automáticas com Revit AP.",
+    "summary": "Introduction"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "This is the HOMEPAGE. | Clash Detection e Modelagem de Passagens Automáticas com Revit AP.",
+    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  }
+}

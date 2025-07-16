@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "src/",
+          "files": [
+            "**/*.csproj"
+          ],
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**",
+            "**/.git/**",
+            "**/.idea/**",
+            "**/projects/**",
+            "**/tests/**"
+          ]
+        }
+      ],
+      "dest": "api",
+      "outputFormat": "apiPage"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "index.md",
+          "toc.yml",
+          "articles/**/*.md",
+          "articles/**/*.yml",
+          "docs/**/*.md",
+          "docs/**/*.yml",
+          "api/**/*.md",
+          "api/**/*.yml"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "ClashOpenings\n",
+      "_appTitle": "Clash Detection e Modelagem de Passagens Automáticas com Revit AP.",
+      "_enableSearch": true,
+      "pdf": true
+    },
+    "postProcessors": [
+      "ExtractSearchIndex"
+    ],
+    "xrefService": [
+      "https://learn.microsoft.com/en-us/dotnet/api/index.json"
+    ],
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "disableGitFeatures": false
+  }
+}

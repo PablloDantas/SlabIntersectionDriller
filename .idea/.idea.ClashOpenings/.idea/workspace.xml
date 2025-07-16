@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Models/RevitFamilyConstants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/docs.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ClashResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ClashResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/LinkElementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/LinkElementData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ClashDetective.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClashDetective.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ElementCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ElementCollector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/FamilyCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/FamilyCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ViewGeometryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ViewGeometryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClashOpenings.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClashOpenings.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +110,7 @@
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net8.0-windows/src/Presentation/Views/ClashSelectionView.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Dev/ClashOpenings/src/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Dev/ClashOpenings/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -174,26 +160,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="Debug - Revit 2025" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Program Files/Autodesk/Revit 2025/Revit.exe" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Program Files/Autodesk/Revit 2025" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="ENV_FILE_PATHS" value="" />
-      <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
-      <option name="RUNTIME_TYPE" value="coreclr" />
-      <method v="2">
-        <option name="Build Solution" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="" />
@@ -316,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752653289066</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactor: Add XML documentation and improve modularity across services and handlers&#10;&#10;- Introduced XML documentation for better code clarity and maintainability in handlers, services, commands, and models.&#10;- Extracted multiple methods in `SlabsOpeningsExternalEventHandler` for better readability and modular processing.&#10;- Enhanced error handling and improved user feedback across commands and event handlers.&#10;- Added the new `RevitFamilyConstants` class to centralize Revit family and parameter constants, improving reusability.">
+      <option name="closed" value="true" />
+      <created>1752655684093</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752655684093</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +313,8 @@
     <MESSAGE value="refactor: Overhaul clash detection workflow and enhance consistency across services.&#10;&#10;- Renamed several classes and services (`ClashDetectionService` to `ClashDetective`, `FamilyPlacementService` to `FamilyCreator`, `RevitElementCollector` to `ElementCollector`) for better clarity and naming consistency.&#10;- Updated `SlabsOpeningsExternalEventHandler` to align with revised clash detection and family creation logic.&#10;- Introduced `LinkElementData` for grouping link instances with their elements, simplifying clash detection process.&#10;- Improved error handling and localized user messages in `SlabsOpeningsExternalEventHandler`.&#10;- Modernized UI text in `ClashSelectionView` for better user interpretation." />
     <MESSAGE value="refactor: Extract methods for improved readability and error handling in `ClashDetective`&#10;&#10;- Introduced `ProcessElementPair` method to encapsulate processing logic for element pairs.&#10;- Added `AddClashResultIfValid` method to handle `ClashResult` creation based on clash parameters.&#10;- Improved error handling with explicit logging for debugging.&#10;- Replaced magic numbers with named constants for better code clarity (`MinVolumeTolerance`, `MinClashParameterValue`)." />
     <MESSAGE value="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery." />
+    <MESSAGE value="refactor: Add XML documentation and improve modularity across services and handlers&#10;&#10;- Introduced XML documentation for better code clarity and maintainability in handlers, services, commands, and models.&#10;- Extracted multiple methods in `SlabsOpeningsExternalEventHandler` for better readability and modular processing.&#10;- Enhanced error handling and improved user feedback across commands and event handlers.&#10;- Added the new `RevitFamilyConstants` class to centralize Revit family and parameter constants, improving reusability." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Add XML documentation and improve modularity across services and handlers&#10;&#10;- Introduced XML documentation for better code clarity and maintainability in handlers, services, commands, and models.&#10;- Extracted multiple methods in `SlabsOpeningsExternalEventHandler` for better readability and modular processing.&#10;- Enhanced error handling and improved user feedback across commands and event handlers.&#10;- Added the new `RevitFamilyConstants` class to centralize Revit family and parameter constants, improving reusability." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
