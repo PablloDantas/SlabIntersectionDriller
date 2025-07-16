@@ -1,6 +1,6 @@
 using Autodesk.Revit.DB;
 
-namespace ClashOpenings.src.Services.ClashDetection;
+namespace ClashOpenings.src.Models;
 
 public class ClashResult
 {

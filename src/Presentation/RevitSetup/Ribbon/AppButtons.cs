@@ -9,9 +9,9 @@ public static class AppButtons
     // Defina aqui cada botão da sua aplicação
     public static readonly ButtonData SlabsOpeningsButton = new(
         "SlabsOpenings",
-        "Slabs Openings",
+        "Inserir Passagens",
         "ClashOpenings.src.Commands.SlabsOpeningsCommand", // Exemplo de namespace do comando
-        "Cria furos em lajes com base nas interseções de dutos.",
+        "Detecta conflitos entre elementos e lajes, e instancia famílias de furos automaticamente no local da interferência.",
         "SlabsOpenings.png"
     );
 

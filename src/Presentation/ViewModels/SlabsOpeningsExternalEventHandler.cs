@@ -1,10 +1,8 @@
-﻿using Autodesk.Revit.DB;
+﻿using System.Text;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using ClashOpenings.src.Commands;
-using ClashOpenings.src.Services.ClashDetection;
-using ClashOpenings.src.Services.FamilyInstance;
-using ClashOpenings.src.Services.Revit;
-using System.Text;
+using ClashOpenings.src.Models;
+using ClashOpenings.src.Services;
 
 namespace ClashOpenings.src.Presentation.ViewModels;
 
@@ -23,39 +21,51 @@ public class SlabsOpeningsExternalEventHandler : IExternalEventHandler
 
             if (_linkInstance1 == null || _linkInstance2 == null)
             {
-                _updateStatusCallback?.Invoke("Error: Please select two different models.");
+                _updateStatusCallback?.Invoke("Error: Por favor, selecione os DOIS modelos e tente novamente.");
                 return;
             }
+
+            if (_linkInstance1.Id == _linkInstance2.Id)
+            {
+                _updateStatusCallback?.Invoke("Error: O Mesmo modelo foi selecionado duas vezes. " +
+                                              "Por favor, tente novamente com modelos diferentes.");
+                return;
+            }
+
 
             var viewService = new ViewGeometryService(doc);
             var searchVolume = viewService.GetSearchVolume();
             if (searchVolume == null)
             {
-                _updateStatusCallback?.Invoke("Error: Unsupported view type. Use a plan view or a 3D view with an active section box.");
+                _updateStatusCallback?.Invoke(
+                    "Error: Tipo de vista não suportado. Use uma vista de planta baixa ou uma vista 3D," +
+                    " com a região de recorte e a caixa de corte ativa.");
                 return;
             }
 
-            var elements1 = RevitElementCollector.GetElementsFromLink(doc, _linkInstance1, searchVolume);
-            var elements2 = RevitElementCollector.GetElementsFromLink(doc, _linkInstance2, searchVolume);
+            var elements1 = ElementCollector.GetElementsFromLink(doc, _linkInstance1, searchVolume);
+            var linkElementData1 = new LinkElementData(_linkInstance1, elements1);
 
-            var clashDetector = new ClashDetectionService();
-            var clashResults = clashDetector.FindClashes((_linkInstance1, elements1), (_linkInstance2, elements2));
 
-            var familyPlacer = new FamilyPlacementService(doc);
+            var elements2 = ElementCollector.GetElementsFromLink(doc, _linkInstance2, searchVolume);
+            var linkElementData2 = new LinkElementData(_linkInstance2, elements2);
+
+
+            var clashDetector = new ClashDetective();
+            var clashResults = clashDetector.FindClashes(linkElementData1, linkElementData2);
+
+            var familyPlacer = new FamilyCreator(doc);
             var openingsCreated = familyPlacer.CreateOpenings(clashResults);
 
             var summary = new StringBuilder();
-            summary.AppendLine($"Clash detection completed. Found {clashResults.Count} clashes.");
-            if (openingsCreated > 0)
-            {
-                summary.AppendLine($"{openingsCreated} openings were created successfully.");
-            }
+            summary.AppendLine($"Detecção de conflitos completa. Encontramos {clashResults.Count} conflitos.");
+            if (openingsCreated > 0) summary.AppendLine($"{openingsCreated} furações foram criadas com sucesso.");
             _updateStatusCallback?.Invoke(summary.ToString());
         }
         catch (Exception ex)
         {
             _updateStatusCallback?.Invoke($"Error: {ex.Message}");
-            TaskDialog.Show("Error", $"Failed to run clash detection: {ex.Message}");
+            TaskDialog.Show("Error", $"Falha na execução da detecção de conflitos: {ex.Message}");
         }
     }
 

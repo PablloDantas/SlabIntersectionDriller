@@ -1,15 +1,15 @@
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
-using ClashOpenings.src.Services.ClashDetection;
+using ClashOpenings.src.Models;
 
-namespace ClashOpenings.src.Services.FamilyInstance;
+namespace ClashOpenings.src.Services;
 
-public class FamilyPlacementService
+public class FamilyCreator
 {
     private readonly Document _doc;
 
-    public FamilyPlacementService(Document doc)
+    public FamilyCreator(Document doc)
     {
         _doc = doc;
     }

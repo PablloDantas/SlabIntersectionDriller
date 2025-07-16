@@ -1,0 +1,125 @@
+using Autodesk.Revit.DB;
+using ClashOpenings.src.Models;
+
+namespace ClashOpenings.src.Services;
+
+public class ClashDetective
+{
+    private const double MinVolumeTolerance = 1e-9;
+
+    public List<ClashResult> FindClashes(LinkElementData linkData1, LinkElementData linkData2)
+    {
+        var clashResults = new List<ClashResult>();
+        var linkInst1 = linkData1.LinkInstance;
+        var elements1 = linkData1.Elements;
+        var linkInst2 = linkData2.LinkInstance;
+        var elements2 = linkData2.Elements;
+
+        var transform1 = linkInst1.GetTotalTransform();
+        var transform2 = linkInst2.GetTotalTransform();
+        var transform2to1 = transform1.Inverse.Multiply(transform2);
+
+        foreach (var elem1 in elements1)
+        {
+            var solid1 = GetSolidFromElement(elem1);
+            if (solid1 == null || solid1.Volume < 1e-9) continue;
+
+            foreach (var elem2 in elements2)
+            {
+                var solid2 = GetSolidFromElement(elem2);
+                if (solid2 == null || solid2.Volume < 1e-9) continue;
+
+                var transformedSolid2 = SolidUtils.CreateTransformed(solid2, transform2to1);
+
+                try
+                {
+                    var intersection = BooleanOperationsUtils.ExecuteBooleanOperation(
+                        solid1, transformedSolid2, BooleanOperationsType.Intersect);
+
+                    if (intersection != null && intersection.Volume > MinVolumeTolerance)
+                    {
+                        var topFace = GetTopFace(intersection);
+                        if (topFace == null) continue;
+
+                        var bboxUV = topFace.GetBoundingBox();
+                        var centerUV = (bboxUV.Min + bboxUV.Max) / 2.0;
+                        var localCenterPoint = topFace.Evaluate(centerUV);
+                        var worldCenterPoint = transform1.OfPoint(localCenterPoint);
+
+                        var (thickness, diameter) = GetClashParameters(elem1, elem2);
+
+                        if (thickness > 0 || diameter > 0)
+                            clashResults.Add(new ClashResult(worldCenterPoint, elem1, elem2, intersection.Volume,
+                                thickness, diameter));
+                    }
+                }
+                catch
+                {
+                    // Ignore boolean operation failures
+                }
+            }
+        }
+
+        return clashResults;
+    }
+
+    private (double thickness, double diameter) GetClashParameters(Element elem1, Element elem2)
+    {
+        double thickness = 0;
+        double diameter = 0;
+
+        var floor = elem1 as Floor ?? elem2 as Floor;
+        var mepCurve = elem1 as MEPCurve ?? elem2 as MEPCurve;
+
+        if (floor != null)
+        {
+            var thicknessParam = floor.get_Parameter(BuiltInParameter.FLOOR_ATTR_THICKNESS_PARAM);
+            if (thicknessParam != null && thicknessParam.HasValue)
+                thickness = thicknessParam.AsDouble();
+        }
+
+        if (mepCurve != null)
+        {
+            var dParam = mepCurve.get_Parameter(BuiltInParameter.RBS_PIPE_DIAMETER_PARAM) ??
+                         mepCurve.get_Parameter(BuiltInParameter.RBS_CONDUIT_DIAMETER_PARAM);
+            if (dParam != null && dParam.HasValue)
+                diameter = dParam.AsDouble();
+        }
+
+        return (thickness, diameter);
+    }
+
+    private Solid GetSolidFromElement(Element element)
+    {
+        var options = new Options { ComputeReferences = true, DetailLevel = ViewDetailLevel.Fine };
+        var geomElem = element.get_Geometry(options);
+        if (geomElem == null) return null;
+
+        foreach (var geomObj in geomElem)
+        {
+            if (geomObj is Solid solid && solid.Volume > 0) return solid;
+            if (geomObj is GeometryInstance geomInst)
+                foreach (var nestedGeomObj in geomInst.GetInstanceGeometry())
+                    if (nestedGeomObj is Solid nestedSolid && nestedSolid.Volume > 0)
+                        return nestedSolid;
+        }
+
+        return null;
+    }
+
+    private PlanarFace GetTopFace(Solid solid)
+    {
+        PlanarFace topFace = null;
+        var highestZ = double.MinValue;
+
+        foreach (Face face in solid.Faces)
+            if (face is PlanarFace planarFace && planarFace.FaceNormal.IsAlmostEqualTo(XYZ.BasisZ))
+                if (planarFace.Origin.Z > highestZ)
+                {
+                    highestZ = planarFace.Origin.Z;
+                    topFace = planarFace;
+                }
+
+        return topFace;
+    }
+}

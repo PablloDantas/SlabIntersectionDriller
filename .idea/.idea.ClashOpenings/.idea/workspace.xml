@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Models/LinkElementData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ClashDetection/ClashDetectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClashDetection/ClashDetectionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ClashDetection/ClashResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClashDetection/ClashResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/FamilyInstance/FamilyPlacementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/FamilyInstance/FamilyPlacementService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ClashDetection/ClashDetectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClashDetective.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ClashDetection/ClashResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ClashResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FamilyInstance/FamilyPlacementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/FamilyCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Revit/RevitElementCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ElementCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Revit/ViewGeometryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ViewGeometryService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +81,17 @@
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/obj/Debug/net8.0-windows/src/Presentation/Views/ClashSelectionView.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Dev/ClashOpenings/src/Commands/SlabsOpeningsCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Dev/ClashOpenings/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Dev/ClashOpenings/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/23/bfd6a9a0/ItemFactoryBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/36/d6ccbddb/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/6e/84b37aa7/RevitLinkInstance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/a8/691ce4ee/Element.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/418c69711e324b1380ab8d1d416a24622062f20/ee/b19d319a/BuiltInCategory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/11/05328caf/UIApplication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d098519a511a474baec0b4b6584bcaa62c0b18/79/b0fa4cd0/DockablePane.cs" root0="SKIP_HIGHLIGHTING" />
@@ -232,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752646501086</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: Enhance clash detection and opening creation process&#10;&#10;- Refactored `ClashDetectionService` to include clash parameter extraction (`thickness` and `diameter`) directly in clash results.&#10;- Simplified `FamilyPlacementService` to work with enriched `ClashResult` objects, reducing dependency on pre-processed data.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to use revised workflows.&#10;- Modernized `ClashSelectionView` with improved styles, layout, and responsiveness.&#10;- Adjusted dockable pane behavior to include new minimum dimensions.">
+      <option name="closed" value="true" />
+      <created>1752649828160</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752649828160</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +269,8 @@
     <MESSAGE value="refactor: Remove obsolete domain entities, value objects, Revit API adapters, application interfaces, and associated commands. Restructure project, relocate resources to `src`, and update namespaces to align with new structure." />
     <MESSAGE value="refactor: Rename classes, view models, and handlers from &quot;ClashSelection&quot; to &quot;SlabsOpenings&quot; for consistency. Introduce `ClassCollectors` for Revit-related data retrieval and update nullable references across handlers and view models." />
     <MESSAGE value="feat: Introduce comprehensive clash detection and opening creation workflow.&#10;&#10;- Added `ClashDetectionService` for clash analysis between linked models.&#10;- Added `FamilyPlacementService` for automated slab opening creation based on clash results.&#10;- Implemented `RevitElementCollector` and `ViewGeometryService` for element retrieval and search volume calculation.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to utilize new services.&#10;- Removed obsolete `ClassCollectors` to streamline functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Introduce comprehensive clash detection and opening creation workflow.&#10;&#10;- Added `ClashDetectionService` for clash analysis between linked models.&#10;- Added `FamilyPlacementService` for automated slab opening creation based on clash results.&#10;- Implemented `RevitElementCollector` and `ViewGeometryService` for element retrieval and search volume calculation.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to utilize new services.&#10;- Removed obsolete `ClassCollectors` to streamline functionality." />
+    <MESSAGE value="feat: Enhance clash detection and opening creation process&#10;&#10;- Refactored `ClashDetectionService` to include clash parameter extraction (`thickness` and `diameter`) directly in clash results.&#10;- Simplified `FamilyPlacementService` to work with enriched `ClashResult` objects, reducing dependency on pre-processed data.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to use revised workflows.&#10;- Modernized `ClashSelectionView` with improved styles, layout, and responsiveness.&#10;- Adjusted dockable pane behavior to include new minimum dimensions." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Enhance clash detection and opening creation process&#10;&#10;- Refactored `ClashDetectionService` to include clash parameter extraction (`thickness` and `diameter`) directly in clash results.&#10;- Simplified `FamilyPlacementService` to work with enriched `ClashResult` objects, reducing dependency on pre-processed data.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to use revised workflows.&#10;- Modernized `ClashSelectionView` with improved styles, layout, and responsiveness.&#10;- Adjusted dockable pane behavior to include new minimum dimensions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

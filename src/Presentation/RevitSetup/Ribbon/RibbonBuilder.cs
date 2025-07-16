@@ -9,8 +9,8 @@ namespace ClashOpenings.src.Presentation.RevitSetup.Ribbon;
 /// </summary>
 public class RibbonBuilder
 {
-    private const string TabName = "Clash Openings"; // Nome da sua aba personalizada
-    private const string PanelName = "Openings Instance"; // Nome do painel
+    private const string TabName = "Passagens BIM"; // Nome da sua aba personalizada
+    private const string PanelName = "Lajes e Pisos"; // Nome do painel
     private readonly UIControlledApplication _application;
 
     public RibbonBuilder(UIControlledApplication application)
