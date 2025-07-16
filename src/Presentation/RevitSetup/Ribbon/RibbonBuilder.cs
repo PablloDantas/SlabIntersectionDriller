@@ -5,19 +5,36 @@ using ClashOpenings.src.Helpers;
 namespace ClashOpenings.src.Presentation.RevitSetup.Ribbon;
 
 /// <summary>
-///     Responsável por construir a aba, painel e botões da aplicação na interface do Revit.
+///     Gerencia a construção e configuração da aba (tab), painel e botões personalizados
+///     da aplicação na interface de usuário do Revit (Ribbon).
 /// </summary>
 public class RibbonBuilder
 {
-    private const string TabName = "Passagens BIM"; // Nome da sua aba personalizada
-    private const string PanelName = "Lajes e Pisos"; // Nome do painel
+    /// <summary>
+    ///     O nome da aba personalizada que será criada no Ribbon do Revit.
+    /// </summary>
+    private const string TabName = "Passagens BIM";
+
+    /// <summary>
+    ///     O nome do painel que será criado dentro da aba personalizada.
+    /// </summary>
+    private const string PanelName = "Lajes e Pisos";
+
     private readonly UIControlledApplication _application;
 
+    /// <summary>
+    ///     Inicializa uma nova instância da classe <see cref="RibbonBuilder" />.
+    /// </summary>
+    /// <param name="application">A instância da aplicação controlada pelo Revit UI.</param>
     public RibbonBuilder(UIControlledApplication application)
     {
         _application = application;
     }
 
+    /// <summary>
+    ///     Constrói a aba, o painel e adiciona todos os botões definidos em <see cref="AppButtons" />
+    ///     ao Ribbon do Revit.
+    /// </summary>
     public void BuildRibbon()
     {
         try
@@ -26,17 +43,16 @@ public class RibbonBuilder
         }
         catch (Exception)
         {
-            // A aba já existe, podemos ignorar este erro
+            // A aba pode já existir; ignora a exceção.
         }
 
         var ribbonPanel = GetOrCreateRibbonPanel(TabName, PanelName);
 
         var assemblyPath = Assembly.GetExecutingAssembly().Location;
 
-        // Adicionar botões individuais
+        // Adiciona botões individuais que não pertencem a grupos.
         foreach (var buttonData in AppButtons.AllButtons)
         {
-            // Pular botões que estão em grupos
             if (AppButtons.ButtonGroups.Values.Any(group => group.Contains(buttonData)))
                 continue;
 
@@ -54,13 +70,12 @@ public class RibbonBuilder
             ribbonPanel.AddItem(pushButtonData);
         }
 
-        // Adicionar grupos de botões
+        // Adiciona grupos de botões ao painel.
         foreach (var group in AppButtons.ButtonGroups)
         {
             if (group.Value.Count == 0)
                 continue;
 
-            // Criamos os botões
             var buttons = new List<PushButtonData>();
             foreach (var buttonData in group.Value)
             {
@@ -78,27 +93,31 @@ public class RibbonBuilder
                 buttons.Add(pushButtonData);
             }
 
-            // Agora adicionamos os botões de acordo com a quantidade
+            // Organiza os botões em pilhas ou individualmente com base na contagem.
             if (buttons.Count == 2)
                 ribbonPanel.AddStackedItems(buttons[0], buttons[1]);
             else if (buttons.Count == 3)
                 ribbonPanel.AddStackedItems(buttons[0], buttons[1], buttons[2]);
             else if (buttons.Count > 0)
-                // Para mais de 3 botões, criamos subpainéis
-                // Ou adicione cada um individualmente
                 foreach (var button in buttons)
                     ribbonPanel.AddItem(button);
         }
     }
 
+    /// <summary>
+    ///     Obtém um painel do Ribbon existente ou cria um novo se não for encontrado.
+    /// </summary>
+    /// <param name="tabName">O nome da aba onde o painel está localizado ou será criado.</param>
+    /// <param name="panelName">O nome do painel a ser procurado ou criado.</param>
+    /// <returns>Uma instância de <see cref="RibbonPanel" />.</returns>
     private RibbonPanel GetOrCreateRibbonPanel(string tabName, string panelName)
     {
-        // Tenta encontrar o painel existente
+        // Tenta encontrar o painel existente na aba especificada.
         foreach (var panel in _application.GetRibbonPanels(tabName))
             if (panel.Name == panelName)
                 return panel;
 
-        // Se não encontrar, cria um novo
+        // Se o painel não for encontrado, cria um novo.
         return _application.CreateRibbonPanel(tabName, panelName);
     }
 }

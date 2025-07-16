@@ -8,14 +8,22 @@ using ClashOpenings.src.Presentation.ViewModels;
 namespace ClashOpenings.src.Commands;
 
 /// <summary>
-///     Comando do Revit para detectar colisões entre elementos de diferentes modelos vinculados.
+///     Representa o comando principal do Revit para gerenciar a interface do usuário de detecção de conflitos de
+///     aberturas.
+///     Este comando é responsável por inicializar e exibir ou ocultar o painel acoplável da funcionalidade.
 /// </summary>
 [Transaction(TransactionMode.Manual)]
 public class SlabsOpeningsCommand : IExternalCommand
 {
     /// <summary>
-    ///     Ponto de entrada principal para o comando.
+    ///     Executa o comando principal do Revit.
+    ///     Este método inicializa o ViewModel, define-o para o painel acoplável de detecção de conflitos
+    ///     e alterna a visibilidade do painel acoplável.
     /// </summary>
+    /// <param name="commandData">Contém informações sobre a aplicação Revit, como o UIDocument ativo.</param>
+    /// <param name="message">Uma mensagem de retorno do comando em caso de falha.</param>
+    /// <param name="elements">Um conjunto de elementos que podem ser selecionados pelo usuário, não utilizado neste comando.</param>
+    /// <returns>O resultado da execução do comando, indicando sucesso ou falha.</returns>
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
         var uiApp = commandData.Application;

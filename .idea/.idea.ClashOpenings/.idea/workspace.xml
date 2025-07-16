@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50723ac5-ec1c-4fe1-b1bc-42df0d3340a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Models/RevitFamilyConstants.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClashOpenings/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/SlabsOpeningsCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/ImageHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ClashResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ClashResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/LinkElementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/LinkElementData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/ClashOpeningsApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/AppButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/ButtonData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/RevitSetup/Ribbon/RibbonBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsExternalEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsRelayCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/ViewModels/SlabsOpeningsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Views/ClashSelectionView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/ClashDetective.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClashDetective.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ElementCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ElementCollector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/FamilyCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/FamilyCreator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/ViewGeometryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ViewGeometryService.cs" afterDir="false" />
     </list>
@@ -64,6 +78,37 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
@@ -263,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752652637427</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery.">
+      <option name="closed" value="true" />
+      <created>1752653289066</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752653289066</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +338,8 @@
     <MESSAGE value="feat: Enhance clash detection and opening creation process&#10;&#10;- Refactored `ClashDetectionService` to include clash parameter extraction (`thickness` and `diameter`) directly in clash results.&#10;- Simplified `FamilyPlacementService` to work with enriched `ClashResult` objects, reducing dependency on pre-processed data.&#10;- Updated `SlabsOpeningsExternalEventHandler` and `SlabsOpeningsCommand` to use revised workflows.&#10;- Modernized `ClashSelectionView` with improved styles, layout, and responsiveness.&#10;- Adjusted dockable pane behavior to include new minimum dimensions." />
     <MESSAGE value="refactor: Overhaul clash detection workflow and enhance consistency across services.&#10;&#10;- Renamed several classes and services (`ClashDetectionService` to `ClashDetective`, `FamilyPlacementService` to `FamilyCreator`, `RevitElementCollector` to `ElementCollector`) for better clarity and naming consistency.&#10;- Updated `SlabsOpeningsExternalEventHandler` to align with revised clash detection and family creation logic.&#10;- Introduced `LinkElementData` for grouping link instances with their elements, simplifying clash detection process.&#10;- Improved error handling and localized user messages in `SlabsOpeningsExternalEventHandler`.&#10;- Modernized UI text in `ClashSelectionView` for better user interpretation." />
     <MESSAGE value="refactor: Extract methods for improved readability and error handling in `ClashDetective`&#10;&#10;- Introduced `ProcessElementPair` method to encapsulate processing logic for element pairs.&#10;- Added `AddClashResultIfValid` method to handle `ClashResult` creation based on clash parameters.&#10;- Improved error handling with explicit logging for debugging.&#10;- Replaced magic numbers with named constants for better code clarity (`MinVolumeTolerance`, `MinClashParameterValue`)." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Extract methods for improved readability and error handling in `ClashDetective`&#10;&#10;- Introduced `ProcessElementPair` method to encapsulate processing logic for element pairs.&#10;- Added `AddClashResultIfValid` method to handle `ClashResult` creation based on clash parameters.&#10;- Improved error handling with explicit logging for debugging.&#10;- Replaced magic numbers with named constants for better code clarity (`MinVolumeTolerance`, `MinClashParameterValue`)." />
+    <MESSAGE value="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Improve modularity and readability in clash detection and family creation&#10;&#10;- Extracted methods in `ClashDetective` for clash transformation calculation and improved processing element pairs.&#10;- Enhanced `FamilyCreator` by adding modular methods for family lookup and parameter setting.&#10;- Improved `ViewGeometryService` by splitting volume calculation logic into distinct methods for better clarity.&#10;- Updated localized error messages and refined transaction handling for better error recovery." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

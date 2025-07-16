@@ -7,20 +7,28 @@ using ClashOpenings.src.Services;
 
 namespace ClashOpenings.src.Presentation.ViewModels;
 
+/// <summary>
+///     ViewModel para a interface de usuário de detecção de conflitos de aberturas em lajes.
+///     Gerencia a seleção de modelos vinculados, o status da operação e a execução do comando de detecção.
+/// </summary>
 public class SlabsOpeningsViewModel : INotifyPropertyChanged
 {
     private ICommand _runClashDetectionCommand;
     private RevitLinkInstance? _selectedLinkInstance1;
     private RevitLinkInstance? _selectedLinkInstance2;
-    private string _statusMessage;
+    private string _statusMessage = string.Empty; // Inicializa com valor padrão
 
+    /// <summary>
+    ///     Inicializa uma nova instância da classe <see cref="SlabsOpeningsViewModel" />.
+    ///     Configura a coleção de instâncias de link do Revit e o comando para detecção de conflitos.
+    /// </summary>
+    /// <param name="uiDoc">O documento UI do Revit ativo.</param>
     public SlabsOpeningsViewModel(UIDocument uiDoc)
     {
         var document = uiDoc.Document;
 
         LinkInstances = new ObservableCollection<RevitLinkInstance>(ElementCollector.GetAllLinkInstances(document));
 
-        // Configurar o ExternalEvent
         var eventHandler = new SlabsOpeningsExternalEventHandler();
         eventHandler.SetStatusCallback(status => StatusMessage = status);
         var externalEvent = ExternalEvent.Create(eventHandler);
@@ -30,18 +38,14 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
             {
                 try
                 {
-                    // Atualizar os links selecionados no handler
                     eventHandler.SetLinks(SelectedLinkInstance1, SelectedLinkInstance2);
-
-                    // Disparar o evento externo
                     externalEvent.Raise();
-
-                    StatusMessage = "Running clash detection...";
+                    StatusMessage = "Executando detecção de conflitos...";
                 }
                 catch (Exception ex)
                 {
-                    StatusMessage = $"Error: {ex.Message}";
-                    TaskDialog.Show("Error", $"Failed to run clash detection: {ex.Message}");
+                    StatusMessage = $"Erro: {ex.Message}";
+                    TaskDialog.Show("Erro", $"Falha ao executar a detecção de conflitos: {ex.Message}");
                 }
             },
             obj => SelectedLinkInstance1 != null &&
@@ -49,8 +53,14 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
                    SelectedLinkInstance1.Id != SelectedLinkInstance2.Id);
     }
 
+    /// <summary>
+    ///     Obtém ou define a coleção observável de instâncias de modelos vinculados do Revit disponíveis.
+    /// </summary>
     public ObservableCollection<RevitLinkInstance> LinkInstances { get; set; }
 
+    /// <summary>
+    ///     Obtém ou define a primeira instância de modelo vinculado selecionada para detecção de conflitos.
+    /// </summary>
     public RevitLinkInstance? SelectedLinkInstance1
     {
         get => _selectedLinkInstance1;
@@ -64,6 +74,9 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    ///     Obtém ou define a segunda instância de modelo vinculado selecionada para detecção de conflitos.
+    /// </summary>
     public RevitLinkInstance? SelectedLinkInstance2
     {
         get => _selectedLinkInstance2;
@@ -77,6 +90,9 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    ///     Obtém ou define a mensagem de status atual a ser exibida na interface do usuário.
+    /// </summary>
     public string StatusMessage
     {
         get => _statusMessage;
@@ -90,6 +106,9 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
         }
     }
 
+    /// <summary>
+    ///     Obtém ou define o comando para iniciar a detecção de conflitos.
+    /// </summary>
     public ICommand RunClashDetectionCommand
     {
         get => _runClashDetectionCommand;
@@ -103,8 +122,15 @@ public class SlabsOpeningsViewModel : INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    /// <summary>
+    ///     Evento acionado quando uma propriedade tem seu valor alterado.
+    /// </summary>
+    public event PropertyChangedEventHandler? PropertyChanged;
 
+    /// <summary>
+    ///     Dispara o evento <see cref="PropertyChanged" />.
+    /// </summary>
+    /// <param name="propertyName">O nome da propriedade que foi alterada.</param>
     protected virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
